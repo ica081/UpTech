@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>UpTech - Eletrônicos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: #0a0a0a;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            color: #e6edf3;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        /* ========== CABEÇALHO ========== */
+        .header {
+            background: linear-gradient(145deg, #0d1117, #161b22);
+            border: 1px solid #30363d;
+            border-radius: 24px;
+            padding: 28px 20px 22px;
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 60px rgba(0, 229, 255, 0.03);
+        }
+
+        .header h1 {
+            font-size: 34px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+        }
+
+        .header h1 span {
+            color: #00e5ff;
+            text-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+        }
+
+        .header .slogan {
+            font-size: 14px;
+            color: #8b949e;
+            margin-top: 2px;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+
+        .header .region {
+            margin-top: 14px;
+            background: rgba(0, 229, 255, 0.06);
+            border: 1px solid rgba(0, 229, 255, 0.15);
+            padding: 8px 20px;
+            border-radius: 40px;
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #a5d6ff;
+            backdrop-filter: blur(4px);
+        }
+
+        .header .region i {
+            font-style: normal;
+            margin-right: 6px;
+        }
+
+        .header .sub-text {
+            font-size: 12px;
+            color: #8b949e;
+            margin-top: 14px;
+            background: rgba(37, 211, 102, 0.08);
+            border: 1px solid rgba(37, 211, 102, 0.15);
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-block;
+            color: #7ee8a0;
+        }
+
+        /* ========== PRODUTOS ========== */
+        .product-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .product-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 18px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: all 0.15s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .product-card:active {
+            transform: scale(0.97);
+            border-color: #25D366;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.05);
+        }
+
+        .product-image {
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            background: #0d1117;
+            border: 1px solid #21262d;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .product-info h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #f0f6fc;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .product-info .price {
+            font-weight: 800;
+            color: #00e5ff;
+            font-size: 18px;
+            margin: 2px 0 2px 0;
+            text-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
+        }
+
+        .product-info .desc {
+            font-size: 12px;
+            color: #8b949e;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* ========== BOTÃO WHATSAPP (VERDE) ========== */
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-whatsapp:active {
+            transform: scale(0.92);
+            box-shadow: 0 2px 8px rgba(37, 211, 102, 0.15);
+        }
+
+        /* ========== RODAPÉ ========== */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #30363d;
+            font-size: 12px;
+            border-top: 1px solid #21262d;
+            padding-top: 22px;
+        }
+
+        .footer strong {
+            color: #f0f6fc;
+        }
+
+        /* ========== RESPONSIVO ========== */
+        @media (max-width: 420px) {
+            .product-card { padding: 12px; }
+            .btn-whatsapp { padding: 8px 14px; font-size: 12px; }
+            .product-image { width: 60px; height: 60px; min-width: 60px; font-size: 26px; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- CABEÇALHO -->
+    <div class="header">
+        <h1>⚡ Up<span>Tech</span></h1>
+        <div class="slogan">ELETRÔNICOS · HIGH TECH</div>
+        <div class="region">
+            <i>📍</i> Barro Alto • Mulungu • Canarana
+        </div>
+        <div class="sub-text">
+            💬 Clique em "Comprar" e já vai direto para o WhatsApp com a mensagem pronta!
+        </div>
+    </div>
+
+    <!-- LISTA DE PRODUTOS -->
+    <div class="product-grid" id="productList">
+        <!-- Os produtos são carregados via JavaScript abaixo -->
+    </div>
+
+    <!-- RODAPÉ -->
+    <div class="footer">
+        © 2026 <strong>UpTech</strong> — Tecnologia que conecta você.
+    </div>
+</div>
+
+<script>
+    // =============================================
+    // 🔥 CONFIGURAÇÕES DA LOJA
+    // =============================================
+    // NÚMERO DO WHATSAPP (apenas números, com DDD e 9 na frente)
+    // Formato internacional: 55 + DDD + NÚMERO
+    const WHATSAPP_NUMBER = "5574988316054"; // 55 (Brasil) + 74 (DDD) + 988316054
+
+    // =============================================
+    // 📦 LISTA DE PRODUTOS (Edite aqui)
+    // =============================================
+    const products = [
+        {
+            id: 1,
+            name: "Fone Bluetooth Estéreo",
+            emoji: "🎧",
+            price: "R$ 39,90",
+            desc: "8h de bateria, som crystal clear.",
+            image: ""
+        },
+        {
+            id: 2,
+            name: "Relógio Digital Smartwatch",
+            emoji: "⌚",
+            price: "R$ 89,90",
+            desc: "Monitora passos, batimentos e sono.",
+            image: ""
+        },
+        {
+            id: 3,
+            name: "Capinha de Celular (Silicone)",
+            emoji: "📱",
+            price: "R$ 15,00",
+            desc: "Para iPhone e Samsung. Cores variadas.",
+            image: ""
+        },
+        {
+            id: 4,
+            name: "Cabo USB-C / Lightning",
+            emoji: "🔌",
+            price: "R$ 19,90",
+            desc: "Carregamento rápido e durável.",
+            image: ""
+        },
+        {
+            id: 5,
+            name: "Power Bank 10000mAh",
+            emoji: "🔋",
+            price: "R$ 55,00",
+            desc: "Carregue até 3 dispositivos.",
+            image: ""
+        }
+    ];
+
+    // =============================================
+    // ⚙️ LÓGICA DE FUNCIONAMENTO
+    // =============================================
+    function comprarViaWhatsApp(productName, productPrice) {
+        // Monta a mensagem personalizada
+        const mensagem = `Olá, UpTech! Vi no site e quero comprar: ${productName} (${productPrice}). Tem entrega para Barro Alto/Mulungu/Canarana? 🛍️`;
+
+        // Codifica a mensagem para URL
+        const mensagemCodificada = encodeURIComponent(mensagem);
+
+        // Cria o link do WhatsApp
+        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${mensagemCodificada}`;
+
+        // Abre o WhatsApp em uma nova aba/janela
+        window.open(url, '_blank');
+    }
+
+    function renderizarProdutos() {
+        const container = document.getElementById('productList');
+        let html = '';
+
+        products.forEach(prod => {
+            let imageHtml = '';
+            if (prod.image && prod.image !== '') {
+                imageHtml = `<img src="${prod.image}" alt="${prod.name}">`;
+            } else {
+                imageHtml = `<span style="font-size:32px; filter: drop-shadow(0 0 8px rgba(0,229,255,0.2));">${prod.emoji || '📦'}</span>`;
+            }
+
+            html += `
+                <div class="product-card">
+                    <div class="product-image">
+                        ${imageHtml}
+                    </div>
+                    <div class="product-info">
+                        <h3>${prod.name}</h3>
+                        <div class="price">${prod.price}</div>
+                        <div class="desc">${prod.desc}</div>
+                    </div>
+                    <button class="btn-whatsapp" onclick="comprarViaWhatsApp('${prod.name}', '${prod.price}')">
+                        💬 Comprar
+                    </button>
+                </div>
+            `;
+        });
+
+        container.innerHTML = html;
+    }
+
+    renderizarProdutos();
+</script>
+
+</body>
+</html>
