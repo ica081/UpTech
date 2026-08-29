@@ -65,7 +65,7 @@
         }
 
         .product-header h1 {
-            font-size: 24px;
+            font-size: 22px;
             color: #f0f6fc;
         }
 
@@ -77,10 +77,10 @@
             margin: 8px 0;
         }
 
-        /* ========== GALERIA DE FOTOS (placeholders) ========== */
+        /* ========== GALERIA DE FOTOS (IMAGENS REAIS) ========== */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
             gap: 10px;
             margin-bottom: 20px;
         }
@@ -88,18 +88,29 @@
         .gallery-item {
             background: #0d1117;
             border: 1px solid #21262d;
-            border-radius: 16px;
+            border-radius: 12px;
+            overflow: hidden;
             aspect-ratio: 1 / 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
-            color: #30363d;
-            transition: all 0.2s;
         }
 
-        .gallery-item:active {
-            border-color: #00e5ff;
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.2s;
+        }
+
+        .gallery-item img:active {
+            transform: scale(1.05);
+        }
+
+        /* Fallback se a imagem não carregar */
+        .gallery-item .fallback-emoji {
+            font-size: 32px;
+            color: #30363d;
         }
 
         /* ========== DESCRIÇÃO E ESPECIFICAÇÕES ========== */
@@ -139,6 +150,23 @@
 
         .info-box ul li:last-child {
             border-bottom: none;
+        }
+
+        /* Destaque para "Itens incluídos" */
+        .includes-box {
+            background: #0d1117;
+            border-left: 3px solid #00e5ff;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .includes-box strong {
+            color: #00e5ff;
+        }
+        .includes-box p {
+            color: #c9d1d9;
+            font-size: 14px;
+            margin-top: 4px;
         }
 
         /* ========== BOTÃO WHATSAPP (SÓ AQUI!) ========== */
@@ -184,9 +212,9 @@
 
         @media (max-width: 420px) {
             .product-header .big-emoji { font-size: 56px; }
-            .product-header h1 { font-size: 20px; }
+            .product-header h1 { font-size: 18px; }
             .product-header .price { font-size: 24px; }
-            .gallery-item { font-size: 30px; }
+            .gallery { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
             .btn-whatsapp { font-size: 16px; padding: 16px; }
         }
     </style>
@@ -210,7 +238,7 @@
 <script src="produtos.js"></script>
 <script>
     // =============================================
-    // 🔥 NÚMERO DO WHATSAPP (SÓ AQUI!)
+    // 🔥 NÚMERO DO WHATSAPP
     // =============================================
     const WHATSAPP_NUMBER = "5574988316054";
 
@@ -237,19 +265,28 @@
             return;
         }
 
-        // Gerar galeria de fotos (placeholders com emojis diferentes)
-        // Se você tiver imagens reais, coloque no array `product.images` no produtos.js
-        const galleryEmojis = ['📸', '📷', '🖼️']; // Placeholders
+        // ======== GERAR GALERIA DE FOTOS ========
         let galleryHtml = '';
-        for (let i = 0; i < 3; i++) {
-            galleryHtml += `
-                <div class="gallery-item">
-                    ${galleryEmojis[i]}
-                </div>
-            `;
+        if (product.images && product.images.length > 0) {
+            product.images.forEach(imgUrl => {
+                galleryHtml += `
+                    <div class="gallery-item">
+                        <img src="${imgUrl}" alt="${product.name}" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\\'fallback-emoji\\'>📸</span>'">
+                    </div>
+                `;
+            });
+        } else {
+            // Fallback se não tiver imagens cadastradas
+            for (let i = 0; i < 3; i++) {
+                galleryHtml += `
+                    <div class="gallery-item">
+                        <span class="fallback-emoji">📷</span>
+                    </div>
+                `;
+            }
         }
 
-        // Montar lista de especificações
+        // ======== MONTAR ESPECIFICAÇÕES ========
         let specsHtml = '';
         if (product.specs && product.specs.length > 0) {
             product.specs.forEach(spec => {
@@ -259,7 +296,18 @@
             specsHtml = `<li style="color:#8b949e;">Nenhuma especificação listada.</li>`;
         }
 
-        // Montar a página
+        // ======== ITENS INCLUÍDOS ========
+        let includesHtml = '';
+        if (product.includes) {
+            includesHtml = `
+                <div class="includes-box">
+                    <strong>📦 Itens incluídos:</strong>
+                    <p>${product.includes}</p>
+                </div>
+            `;
+        }
+
+        // ======== MONTAR PÁGINA COMPLETA ========
         const html = `
             <div class="product-header">
                 <span class="big-emoji">${product.emoji}</span>
@@ -274,6 +322,7 @@
             <div class="info-box">
                 <h2>📖 Sobre o produto</h2>
                 <p>${product.fullDesc || product.shortDesc}</p>
+                ${includesHtml}
             </div>
 
             <div class="info-box">
@@ -281,7 +330,7 @@
                 <ul>${specsHtml}</ul>
             </div>
 
-            <!-- 🔥 BOTÃO DO WHATSAPP - SÓ APARECE AQUI! -->
+            <!-- 🔥 BOTÃO DO WHATSAPP - SÓ AQUI! -->
             <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
                 `Olá, UpTech! Vi no site e quero comprar: ${product.name} (${product.price}). Tem entrega para Barro Alto/Mulungu/Canarana? 🛍️`
             )}" target="_blank" class="btn-whatsapp">
