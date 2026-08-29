@@ -71,6 +71,25 @@
             text-shadow: 0 0 30px rgba(0, 229, 255, 0.15);
         }
 
+        /* ========== BADGE DE ESTOQUE (NOVO) ========== */
+        .stock-info {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 700;
+            background: rgba(37, 211, 102, 0.12);
+            color: #25D366;
+            border: 1px solid rgba(37, 211, 102, 0.2);
+        }
+
+        .stock-info.low-stock {
+            background: rgba(255, 193, 7, 0.12);
+            color: #FFC107;
+            border: 1px solid rgba(255, 193, 7, 0.2);
+        }
+
         /* ========== GALERIA ESTILO MERCADO LIVRE ========== */
         .gallery-container {
             background: #161b22;
@@ -80,7 +99,6 @@
             margin-bottom: 20px;
         }
 
-        /* Imagem principal (grande) */
         .main-image {
             width: 100%;
             aspect-ratio: 1 / 1;
@@ -106,7 +124,6 @@
             transform: scale(0.98);
         }
 
-        /* Miniaturas (thumbnails) */
         .thumbnails {
             display: flex;
             gap: 10px;
@@ -246,7 +263,7 @@
             font-size: 24px;
         }
 
-        /* ========== LIGHTBOX (modal para ampliar) ========== */
+        /* ========== LIGHTBOX ========== */
         .lightbox {
             display: none;
             position: fixed;
@@ -338,6 +355,7 @@
             .product-header h1 { font-size: 17px; }
             .product-header .price { font-size: 22px; }
             .thumbnail { width: 60px; min-width: 60px; height: 60px; }
+            .stock-info { font-size: 12px; padding: 4px 12px; }
             .btn-whatsapp { font-size: 16px; padding: 16px; }
             .lightbox .nav-arrows button { font-size: 28px; padding: 8px 16px; min-width: 50px; }
             .lightbox .close-btn { top: 10px; right: 20px; font-size: 32px; }
@@ -444,6 +462,36 @@
             currentImages = ['📸', '📷', '🖼️']; // fallback
         }
 
+        // ======== BADGE DE ESTOQUE ========
+        let stockHtml = '';
+        if (product.stock !== undefined && product.stock > 0) {
+            let stockClass = 'stock-info';
+            let stockEmoji = '✅';
+            let stockText = `${product.stock} unidades disponíveis`;
+
+            // Se estoque for baixo (menos de 5), muda para amarelo de atenção
+            if (product.stock <= 3) {
+                stockClass += ' low-stock';
+                stockEmoji = '⚠️';
+                stockText = `Últimas ${product.stock} unidades!`;
+            }
+
+            stockHtml = `
+                <div class="${stockClass}">
+                    ${stockEmoji} ${stockText}
+                </div>
+            `;
+        } else if (product.stock === 0) {
+            stockHtml = `
+                <div class="stock-info" style="background:rgba(255,0,0,0.12); color:#ff4444; border-color:rgba(255,0,0,0.2);">
+                    ❌ Produto esgotado
+                </div>
+            `;
+        } else {
+            // Se não tiver stock definido, não mostra nada
+            stockHtml = '';
+        }
+
         // ======== IMAGEM PRINCIPAL ========
         let mainImageSrc = currentImages[0] || '';
         let mainImageHtml = '';
@@ -496,6 +544,7 @@
             <div class="product-header">
                 <h1>${product.name}</h1>
                 <div class="price">${product.price}</div>
+                ${stockHtml}  <!-- 👈 BADGE DE ESTOQUE AQUI -->
             </div>
 
             <div class="gallery-container">
@@ -519,7 +568,7 @@
             </div>
 
             <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-                `Olá, UpTech! Vi no site e quero comprar: ${product.name} (${product.price}).`
+                `Olá, UpTech! Vi no site e quero comprar: ${product.name} (${product.price}). Tem entrega para Barro Alto/Mulungu/Canarana? 🛍️`
             )}" target="_blank" class="btn-whatsapp">
                 <i>💬</i> Comprar agora no WhatsApp
             </a>
@@ -539,14 +588,12 @@
         if (mainImg) {
             mainImg.src = imgSrc;
         } else {
-            // Se a imagem principal for um emoji fallback, recria
             const mainContainer = document.querySelector('.main-image');
             if (mainContainer) {
                 mainContainer.innerHTML = `<img src="${imgSrc}" alt="Produto" id="mainImage" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\\'font-size:48px;color:#30363d;\\'>📷</span>'">`;
             }
         }
 
-        // Atualiza a classe 'active' nas miniaturas
         document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
             thumb.classList.toggle('active', i === index);
         });
@@ -558,13 +605,11 @@
     document.addEventListener('DOMContentLoaded', function() {
         renderizarProduto();
 
-        // Fechar lightbox
         document.getElementById('closeLightbox').addEventListener('click', fecharLightbox);
         document.getElementById('lightbox').addEventListener('click', function(e) {
             if (e.target === this) fecharLightbox();
         });
 
-        // Navegação
         document.getElementById('prevImage').addEventListener('click', function(e) {
             e.stopPropagation();
             navegar(-1);
@@ -574,7 +619,6 @@
             navegar(1);
         });
 
-        // Teclado
         document.addEventListener('keydown', function(e) {
             if (!document.getElementById('lightbox').classList.contains('active')) return;
             if (e.key === 'Escape') fecharLightbox();

@@ -10,6 +10,7 @@ const products = [
         shortDesc: "Tela AMOLED, Monitor Saúde, GPS e Bluetooth.",
         fullDesc: "O Smartwatch ULTRA PLUS combina desempenho, estilo e funcionalidades que tornam o seu dia mais eficiente e conectado. Com uma tela AMOLED vibrante, bateria de longa duração e monitoramento inteligente de saúde, o X10 ULTRA PLUS é mais do que um relógio, é seu novo parceiro para uma vida mais ativa e conectada. O X10 ULTRA PLUS oferece uma experiência visual confortável. A caixa requintada é elegante e generosa. Compatível com Android e iOS, conecta-se perfeitamente ao seu smartphone. Notificações em tempo real para que você não perca nenhuma informação importante. A função de ilha dinâmica torna sua vida inteligente mais vívida: chamadas, música, tudo está sob controle.",
         specs: [
+            "🎨 Cores disponíveis: Preto e Prata",
             "📱 Compatível com Android e iOS",
             "🖥️ 8 estilos de menu interativo",
             "🔄 Coroa giratória funcional integrada ao sistema",
@@ -30,7 +31,8 @@ const products = [
             "https://http2.mlstatic.com/D_NQ_NP_2X_949131-MLA96657678474_112025-F.webp",
             "https://http2.mlstatic.com/D_NQ_NP_2X_857701-MLA94555372551_102025-F.webp"
         ],
-        includes: "1 Smartwatch Ultra 10 Plus, pulseiras originais, 1 cabo carregador indutivo sem fio e 1 manual do usuário."
+        includes: "1 Smartwatch Ultra 10 Plus, pulseiras originais, 1 cabo carregador indutivo sem fio e 1 manual do usuário.",
+        stock: 2  // 👈 ESTOQUE: 2 unidades
     },
     {
         id: 2,
@@ -57,7 +59,8 @@ const products = [
             "https://http2.mlstatic.com/D_NQ_NP_2X_932271-MLB115314188406_082026-F-kit-com-2-cameras-de-seguranca-externas-wifi-380-pro-smart.webp",
             "https://http2.mlstatic.com/D_NQ_NP_2X_682722-MLB116724716409_082026-F-kit-com-2-cameras-de-seguranca-externas-wifi-380-pro-smart.webp"
         ],
-        includes: "1 Câmera de Segurança 380 Pro Smart, carregador, manual e parafusos para instalação."
+        includes: "1 Câmera de Segurança 380 Pro Smart, carregador, manual e parafusos para instalação.",
+        stock: 2  // 👈 ESTOQUE: 2 unidades
     },
     {
         id: 3,
@@ -79,11 +82,11 @@ const products = [
             "📏 Alcance de até 10 metros"
         ],
         images: [
-            "https://http2.mlstatic.com/D_NQ_NP_2X_843835-MLB107525005107_022026-F-kit-atacado-10-fones-m10-bluetooth--qualidade-premium.webp",
-            "https://http2.mlstatic.com/D_NQ_NP_2X_957603-MLB107524656851_022026-F-kit-atacado-10-fones-m10-bluetooth--qualidade-premium.webp",
-            "https://http2.mlstatic.com/D_NQ_NP_2X_976027-MLB106848627854_022026-F-kit-atacado-10-fones-m10-bluetooth--qualidade-premium.webp"
+            "https://http2.mlstatic.com/D_NQ_NP_2X_809252-MLB111481911916_052026-F-kit-com-10-fones-m10-bluetooth-atacado-bt-wireless-revenda.webp",
+            "https://http2.mlstatic.com/D_NQ_NP_2X_724435-MLB111481498716_052026-F-kit-com-10-fones-m10-bluetooth-atacado-bt-wireless-revenda.webp"
         ],
-        includes: "1 par de fones M10, estojo de carregamento e cabo USB para carregamento."
+        includes: "1 par de fones M10, estojo de carregamento e cabo USB para carregamento.",
+        stock: 10  // 👈 ESTOQUE: 10 unidades
     },
     {
         id: 4,
@@ -103,12 +106,12 @@ const products = [
             "🚫 Não forma condensação na parte externa"
         ],
         images: [
-            
+            "https://http2.mlstatic.com/D_NQ_NP_2X_919613-MLA99972974045_112025-F.webp",
             "https://http2.mlstatic.com/D_NQ_NP_2X_909283-MLU77998706140_082024-F.webp",
             "https://http2.mlstatic.com/D_NQ_NP_2X_885849-MLU79077787181_092024-F.webp",
-            "https://http2.mlstatic.com/D_NQ_NP_2X_919613-MLA99972974045_112025-F.webp",
             "https://http2.mlstatic.com/D_NQ_NP_2X_753279-MLU79077551499_092024-F.webp"
         ],
-        includes: "1 Garrafa Térmica Lens Smart Cup (500ml) com visor digital."
+        includes: "1 Garrafa Térmica Lens Smart Cup (500ml) com visor digital.",
+        stock: 3  // 👈 ESTOQUE: 3 unidades
     }
 ];
