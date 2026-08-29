@@ -80,8 +80,9 @@ const products = [
             "📏 Alcance de até 10 metros"
         ],
         images: [
-            "https://http2.mlstatic.com/D_NQ_NP_2X_809252-MLB111481911916_052026-F-kit-com-10-fones-m10-bluetooth-atacado-bt-wireless-revenda.webp",
-            "https://http2.mlstatic.com/D_NQ_NP_2X_724435-MLB111481498716_052026-F-kit-com-10-fones-m10-bluetooth-atacado-bt-wireless-revenda.webp"
+            "https://http2.mlstatic.com/D_NQ_NP_2X_843835-MLB107525005107_022026-F-kit-atacado-10-fones-m10-bluetooth--qualidade-premium.webp",
+            "https://http2.mlstatic.com/D_NQ_NP_2X_957603-MLB107524656851_022026-F-kit-atacado-10-fones-m10-bluetooth--qualidade-premium.webp",
+            "https://http2.mlstatic.com/D_NQ_NP_2X_976027-MLB106848627854_022026-F-kit-atacado-10-fones-m10-bluetooth--qualidade-premium.webp"
         ],
         includes: "1 par de fones M10, estojo de carregamento e cabo USB para carregamento."
     },
