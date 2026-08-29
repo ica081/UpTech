@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>UpTech - Detalhes do Produto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: #0a0a0a;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            color: #e6edf3;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        /* ========== BOTÃO VOLTAR ========== */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #8b949e;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            padding: 8px 16px;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 40px;
+            transition: all 0.2s;
+        }
+
+        .back-button:active {
+            background: #21262d;
+            color: #fff;
+        }
+
+        /* ========== CABEÇALHO DO PRODUTO ========== */
+        .product-header {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 24px;
+            padding: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .product-header .big-emoji {
+            font-size: 72px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .product-header h1 {
+            font-size: 24px;
+            color: #f0f6fc;
+        }
+
+        .product-header .price {
+            font-size: 28px;
+            font-weight: 800;
+            color: #00e5ff;
+            text-shadow: 0 0 30px rgba(0, 229, 255, 0.15);
+            margin: 8px 0;
+        }
+
+        /* ========== GALERIA DE FOTOS (placeholders) ========== */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .gallery-item {
+            background: #0d1117;
+            border: 1px solid #21262d;
+            border-radius: 16px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #30363d;
+            transition: all 0.2s;
+        }
+
+        .gallery-item:active {
+            border-color: #00e5ff;
+        }
+
+        /* ========== DESCRIÇÃO E ESPECIFICAÇÕES ========== */
+        .info-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 18px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .info-box h2 {
+            font-size: 16px;
+            color: #f0f6fc;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #21262d;
+            padding-bottom: 8px;
+        }
+
+        .info-box p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #c9d1d9;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-box ul li {
+            padding: 6px 0;
+            font-size: 14px;
+            color: #c9d1d9;
+            border-bottom: 1px solid #0d1117;
+        }
+
+        .info-box ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* ========== BOTÃO WHATSAPP (SÓ AQUI!) ========== */
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.3);
+            transition: all 0.2s;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .btn-whatsapp:active {
+            transform: scale(0.96);
+            box-shadow: 0 3px 15px rgba(37, 211, 102, 0.15);
+        }
+
+        .btn-whatsapp i {
+            font-style: normal;
+            font-size: 24px;
+        }
+
+        /* ========== RODAPÉ ========== */
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #30363d;
+            font-size: 12px;
+            border-top: 1px solid #21262d;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 420px) {
+            .product-header .big-emoji { font-size: 56px; }
+            .product-header h1 { font-size: 20px; }
+            .product-header .price { font-size: 24px; }
+            .gallery-item { font-size: 30px; }
+            .btn-whatsapp { font-size: 16px; padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- BOTÃO VOLTAR -->
+    <a href="index.html" class="back-button">← Voltar ao catálogo</a>
+
+    <!-- CONTEÚDO DINÂMICO -->
+    <div id="productDetail">
+        <!-- Preenchido via JavaScript -->
+    </div>
+
+    <div class="footer">
+        © 2026 <strong>UpTech</strong> — Tecnologia que conecta você.
+    </div>
+</div>
+
+<script src="produtos.js"></script>
+<script>
+    // =============================================
+    // 🔥 NÚMERO DO WHATSAPP (SÓ AQUI!)
+    // =============================================
+    const WHATSAPP_NUMBER = "5574988316054";
+
+    // =============================================
+    // ⚙️ LÓGICA PARA CARREGAR O PRODUTO
+    // =============================================
+    function getProductId() {
+        const params = new URLSearchParams(window.location.search);
+        return parseInt(params.get('id'));
+    }
+
+    function renderizarProduto() {
+        const id = getProductId();
+        const product = products.find(p => p.id === id);
+
+        if (!product) {
+            document.getElementById('productDetail').innerHTML = `
+                <div class="info-box" style="text-align:center; padding:40px;">
+                    <h2>😕 Produto não encontrado</h2>
+                    <p style="color:#8b949e;">Volte para a vitrine e escolha outro produto.</p>
+                    <a href="index.html" style="color:#00e5ff; display:inline-block; margin-top:16px;">← Voltar</a>
+                </div>
+            `;
+            return;
+        }
+
+        // Gerar galeria de fotos (placeholders com emojis diferentes)
+        // Se você tiver imagens reais, coloque no array `product.images` no produtos.js
+        const galleryEmojis = ['📸', '📷', '🖼️']; // Placeholders
+        let galleryHtml = '';
+        for (let i = 0; i < 3; i++) {
+            galleryHtml += `
+                <div class="gallery-item">
+                    ${galleryEmojis[i]}
+                </div>
+            `;
+        }
+
+        // Montar lista de especificações
+        let specsHtml = '';
+        if (product.specs && product.specs.length > 0) {
+            product.specs.forEach(spec => {
+                specsHtml += `<li>${spec}</li>`;
+            });
+        } else {
+            specsHtml = `<li style="color:#8b949e;">Nenhuma especificação listada.</li>`;
+        }
+
+        // Montar a página
+        const html = `
+            <div class="product-header">
+                <span class="big-emoji">${product.emoji}</span>
+                <h1>${product.name}</h1>
+                <div class="price">${product.price}</div>
+            </div>
+
+            <div class="gallery">
+                ${galleryHtml}
+            </div>
+
+            <div class="info-box">
+                <h2>📖 Sobre o produto</h2>
+                <p>${product.fullDesc || product.shortDesc}</p>
+            </div>
+
+            <div class="info-box">
+                <h2>⚙️ Especificações técnicas</h2>
+                <ul>${specsHtml}</ul>
+            </div>
+
+            <!-- 🔥 BOTÃO DO WHATSAPP - SÓ APARECE AQUI! -->
+            <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+                `Olá, UpTech! Vi no site e quero comprar: ${product.name} (${product.price}). Tem entrega para Barro Alto/Mulungu/Canarana? 🛍️`
+            )}" target="_blank" class="btn-whatsapp">
+                <i>💬</i> Comprar agora no WhatsApp
+            </a>
+        `;
+
+        document.getElementById('productDetail').innerHTML = html;
+    }
+
+    renderizarProduto();
+</script>
+
+</body>
+</html>

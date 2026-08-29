@@ -34,7 +34,7 @@
             padding: 28px 20px 22px;
             text-align: center;
             margin-bottom: 25px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 60px rgba(0, 229, 255, 0.03);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
         }
 
         .header h1 {
@@ -67,27 +67,20 @@
             font-size: 13px;
             font-weight: 600;
             color: #a5d6ff;
-            backdrop-filter: blur(4px);
-        }
-
-        .header .region i {
-            font-style: normal;
-            margin-right: 6px;
         }
 
         .header .sub-text {
             font-size: 12px;
             color: #8b949e;
             margin-top: 14px;
-            background: rgba(37, 211, 102, 0.08);
-            border: 1px solid rgba(37, 211, 102, 0.15);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid #21262d;
             padding: 6px 14px;
             border-radius: 20px;
             display: inline-block;
-            color: #7ee8a0;
         }
 
-        /* ========== PRODUTOS ========== */
+        /* ========== PRODUTOS (vitrine) ========== */
         .product-grid {
             display: flex;
             flex-direction: column;
@@ -102,14 +95,16 @@
             display: flex;
             align-items: center;
             gap: 14px;
+            cursor: pointer;
             transition: all 0.15s ease;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            text-decoration: none;
         }
 
         .product-card:active {
             transform: scale(0.97);
-            border-color: #25D366;
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.05);
+            border-color: #00e5ff;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.05);
         }
 
         .product-image {
@@ -124,13 +119,6 @@
             justify-content: center;
             font-size: 32px;
             flex-shrink: 0;
-            overflow: hidden;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         .product-info {
@@ -142,9 +130,6 @@
             font-size: 15px;
             font-weight: 700;
             color: #f0f6fc;
-            display: flex;
-            align-items: center;
-            gap: 6px;
         }
 
         .product-info .price {
@@ -152,7 +137,6 @@
             color: #00e5ff;
             font-size: 18px;
             margin: 2px 0 2px 0;
-            text-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
         }
 
         .product-info .desc {
@@ -163,29 +147,23 @@
             text-overflow: ellipsis;
         }
 
-        /* ========== BOTÃO WHATSAPP (VERDE) ========== */
-        .btn-whatsapp {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            border: none;
-            padding: 10px 18px;
+        .btn-detail {
+            background: #21262d;
+            color: #c9d1d9;
+            border: 1px solid #30363d;
+            padding: 8px 14px;
             border-radius: 40px;
-            font-weight: 700;
-            font-size: 13px;
+            font-weight: 600;
+            font-size: 12px;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            white-space: nowrap;
             transition: all 0.2s;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+            white-space: nowrap;
             flex-shrink: 0;
-            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .btn-whatsapp:active {
-            transform: scale(0.92);
-            box-shadow: 0 2px 8px rgba(37, 211, 102, 0.15);
+        .btn-detail:active {
+            background: #00e5ff;
+            color: #0a0a0a;
         }
 
         /* ========== RODAPÉ ========== */
@@ -202,10 +180,9 @@
             color: #f0f6fc;
         }
 
-        /* ========== RESPONSIVO ========== */
         @media (max-width: 420px) {
             .product-card { padding: 12px; }
-            .btn-whatsapp { padding: 8px 14px; font-size: 12px; }
+            .btn-detail { padding: 6px 12px; font-size: 11px; }
             .product-image { width: 60px; height: 60px; min-width: 60px; font-size: 26px; }
             .header h1 { font-size: 28px; }
         }
@@ -222,125 +199,46 @@
             <i>📍</i> Barro Alto • Mulungu • Canarana
         </div>
         <div class="sub-text">
-            💬 Clique em "Comprar" e já vai direto para o WhatsApp com a mensagem pronta!
+            👆 Clique em um produto para ver mais detalhes
         </div>
     </div>
 
     <!-- LISTA DE PRODUTOS -->
     <div class="product-grid" id="productList">
-        <!-- Os produtos são carregados via JavaScript abaixo -->
+        <!-- Os produtos são carregados via JavaScript -->
     </div>
 
-    <!-- RODAPÉ -->
     <div class="footer">
         © 2026 <strong>UpTech</strong> — Tecnologia que conecta você.
     </div>
 </div>
 
+<script src="produtos.js"></script>
 <script>
-    // =============================================
-    // 🔥 CONFIGURAÇÕES DA LOJA
-    // =============================================
-    // NÚMERO DO WHATSAPP (apenas números, com DDD e 9 na frente)
-    // Formato internacional: 55 + DDD + NÚMERO
-    const WHATSAPP_NUMBER = "5574988316054"; // 55 (Brasil) + 74 (DDD) + 988316054
-
-    // =============================================
-    // 📦 LISTA DE PRODUTOS (Edite aqui)
-    // =============================================
-    const products = [
-        {
-            id: 1,
-            name: "Fone Bluetooth Estéreo",
-            emoji: "🎧",
-            price: "R$ 39,90",
-            desc: "8h de bateria, som crystal clear.",
-            image: ""
-        },
-        {
-            id: 2,
-            name: "Relógio Digital Smartwatch",
-            emoji: "⌚",
-            price: "R$ 89,90",
-            desc: "Monitora passos, batimentos e sono.",
-            image: ""
-        },
-        {
-            id: 3,
-            name: "Capinha de Celular (Silicone)",
-            emoji: "📱",
-            price: "R$ 15,00",
-            desc: "Para iPhone e Samsung. Cores variadas.",
-            image: ""
-        },
-        {
-            id: 4,
-            name: "Cabo USB-C / Lightning",
-            emoji: "🔌",
-            price: "R$ 19,90",
-            desc: "Carregamento rápido e durável.",
-            image: ""
-        },
-        {
-            id: 5,
-            name: "Power Bank 10000mAh",
-            emoji: "🔋",
-            price: "R$ 55,00",
-            desc: "Carregue até 3 dispositivos.",
-            image: ""
-        }
-    ];
-
-    // =============================================
-    // ⚙️ LÓGICA DE FUNCIONAMENTO
-    // =============================================
-    function comprarViaWhatsApp(productName, productPrice) {
-        // Monta a mensagem personalizada
-        const mensagem = `Olá, UpTech! Vi no site e quero comprar: ${productName} (${productPrice}). Tem entrega para Barro Alto/Mulungu/Canarana? 🛍️`;
-
-        // Codifica a mensagem para URL
-        const mensagemCodificada = encodeURIComponent(mensagem);
-
-        // Cria o link do WhatsApp
-        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${mensagemCodificada}`;
-
-        // Abre o WhatsApp em uma nova aba/janela
-        window.open(url, '_blank');
-    }
-
-    function renderizarProdutos() {
+    function renderizarVitrine() {
         const container = document.getElementById('productList');
         let html = '';
 
         products.forEach(prod => {
-            let imageHtml = '';
-            if (prod.image && prod.image !== '') {
-                imageHtml = `<img src="${prod.image}" alt="${prod.name}">`;
-            } else {
-                imageHtml = `<span style="font-size:32px; filter: drop-shadow(0 0 8px rgba(0,229,255,0.2));">${prod.emoji || '📦'}</span>`;
-            }
-
             html += `
-                <div class="product-card">
+                <a href="produto.html?id=${prod.id}" class="product-card">
                     <div class="product-image">
-                        ${imageHtml}
+                        <span style="font-size:32px;">${prod.emoji}</span>
                     </div>
                     <div class="product-info">
                         <h3>${prod.name}</h3>
                         <div class="price">${prod.price}</div>
-                        <div class="desc">${prod.desc}</div>
+                        <div class="desc">${prod.shortDesc}</div>
                     </div>
-                    <button class="btn-whatsapp" onclick="comprarViaWhatsApp('${prod.name}', '${prod.price}')">
-                        💬 Comprar
-                    </button>
-                </div>
+                    <div class="btn-detail">Ver ➜</div>
+                </a>
             `;
         });
 
         container.innerHTML = html;
     }
 
-    renderizarProdutos();
+    renderizarVitrine();
 </script>
 
 </body>
