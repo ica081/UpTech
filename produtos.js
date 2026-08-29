@@ -82,8 +82,9 @@ const products = [
             "📏 Alcance de até 10 metros"
         ],
         images: [
-            "https://http2.mlstatic.com/D_NQ_NP_2X_809252-MLB111481911916_052026-F-kit-com-10-fones-m10-bluetooth-atacado-bt-wireless-revenda.webp",
-            "https://http2.mlstatic.com/D_NQ_NP_2X_724435-MLB111481498716_052026-F-kit-com-10-fones-m10-bluetooth-atacado-bt-wireless-revenda.webp"
+            "https://http2.mlstatic.com/D_NQ_NP_2X_788201-MLB107524567451_022026-F-kit-atacado-10-fones-m10-bluetooth--qualidade-premium.webp",
+            "https://http2.mlstatic.com/D_NQ_NP_2X_843835-MLB107525005107_022026-F-kit-atacado-10-fones-m10-bluetooth--qualidade-premium.webp",
+            "https://http2.mlstatic.com/D_NQ_NP_2X_976027-MLB106848627854_022026-F-kit-atacado-10-fones-m10-bluetooth--qualidade-premium.webp"
         ],
         includes: "1 par de fones M10, estojo de carregamento e cabo USB para carregamento.",
         stock: 10  // 👈 ESTOQUE: 10 unidades
@@ -106,10 +107,11 @@ const products = [
             "🚫 Não forma condensação na parte externa"
         ],
         images: [
+            "https://http2.mlstatic.com/D_NQ_NP_2X_753279-MLU79077551499_092024-F.webp",
             "https://http2.mlstatic.com/D_NQ_NP_2X_919613-MLA99972974045_112025-F.webp",
             "https://http2.mlstatic.com/D_NQ_NP_2X_909283-MLU77998706140_082024-F.webp",
-            "https://http2.mlstatic.com/D_NQ_NP_2X_885849-MLU79077787181_092024-F.webp",
-            "https://http2.mlstatic.com/D_NQ_NP_2X_753279-MLU79077551499_092024-F.webp"
+            "https://http2.mlstatic.com/D_NQ_NP_2X_885849-MLU79077787181_092024-F.webp"
+            
         ],
         includes: "1 Garrafa Térmica Lens Smart Cup (500ml) com visor digital.",
         stock: 3  // 👈 ESTOQUE: 3 unidades
