@@ -53,38 +53,86 @@
             background: #161b22;
             border: 1px solid #30363d;
             border-radius: 24px;
-            padding: 24px;
+            padding: 20px 20px 16px;
             margin-bottom: 20px;
             text-align: center;
         }
 
         .product-header h1 {
-            font-size: 22px;
+            font-size: 20px;
             color: #f0f6fc;
+            margin-bottom: 4px;
         }
 
         .product-header .price {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 800;
             color: #00e5ff;
             text-shadow: 0 0 30px rgba(0, 229, 255, 0.15);
-            margin: 8px 0;
         }
 
-        /* ========== GALERIA DE FOTOS (MAIORES) ========== */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+        /* ========== GALERIA ESTILO MERCADO LIVRE ========== */
+        .gallery-container {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 18px;
+            padding: 16px;
             margin-bottom: 20px;
         }
 
-        .gallery-item {
+        /* Imagem principal (grande) */
+        .main-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
             background: #0d1117;
-            border: 1px solid #21262d;
             border-radius: 12px;
             overflow: hidden;
-            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 1px solid #21262d;
+            position: relative;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.2s;
+        }
+
+        .main-image:active img {
+            transform: scale(0.98);
+        }
+
+        /* Miniaturas (thumbnails) */
+        .thumbnails {
+            display: flex;
+            gap: 10px;
+            margin-top: 14px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+            scrollbar-width: thin;
+            scrollbar-color: #30363d transparent;
+        }
+
+        .thumbnails::-webkit-scrollbar {
+            height: 4px;
+        }
+        .thumbnails::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 4px;
+        }
+
+        .thumbnail {
+            width: 70px;
+            min-width: 70px;
+            height: 70px;
+            background: #0d1117;
+            border: 2px solid #21262d;
+            border-radius: 10px;
+            overflow: hidden;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -92,18 +140,23 @@
             transition: border-color 0.2s;
         }
 
-        .gallery-item:active {
+        .thumbnail.active {
             border-color: #00e5ff;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
         }
 
-        .gallery-item img {
+        .thumbnail:active {
+            transform: scale(0.95);
+        }
+
+        .thumbnail img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .gallery-item .fallback-emoji {
-            font-size: 40px;
+        .thumbnail .fallback-emoji {
+            font-size: 24px;
             color: #30363d;
         }
 
@@ -193,7 +246,7 @@
             font-size: 24px;
         }
 
-        /* ========== LIGHTBOX (MODAL DE IMAGENS) ========== */
+        /* ========== LIGHTBOX (modal para ampliar) ========== */
         .lightbox {
             display: none;
             position: fixed;
@@ -201,7 +254,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.92);
+            background: rgba(0, 0, 0, 0.95);
             z-index: 9999;
             justify-content: center;
             align-items: center;
@@ -221,10 +274,10 @@
             color: #fff;
             cursor: pointer;
             font-weight: 300;
-            transition: transform 0.2s;
             background: none;
             border: none;
             line-height: 1;
+            transition: transform 0.2s;
         }
 
         .lightbox .close-btn:active {
@@ -282,9 +335,9 @@
         }
 
         @media (max-width: 420px) {
-            .product-header h1 { font-size: 18px; }
-            .product-header .price { font-size: 24px; }
-            .gallery { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .product-header h1 { font-size: 17px; }
+            .product-header .price { font-size: 22px; }
+            .thumbnail { width: 60px; min-width: 60px; height: 60px; }
             .btn-whatsapp { font-size: 16px; padding: 16px; }
             .lightbox .nav-arrows button { font-size: 28px; padding: 8px 16px; min-width: 50px; }
             .lightbox .close-btn { top: 10px; right: 20px; font-size: 32px; }
@@ -307,7 +360,7 @@
     </div>
 </div>
 
-<!-- LIGHTBOX (MODAL) -->
+<!-- LIGHTBOX -->
 <div id="lightbox" class="lightbox">
     <button class="close-btn" id="closeLightbox">✕</button>
     <img id="lightboxImg" class="lightbox-image" src="" alt="Imagem ampliada">
@@ -333,18 +386,20 @@
         return parseInt(params.get('id'));
     }
 
-    // Variáveis globais para o lightbox
+    // Variáveis para o lightbox
     let currentImages = [];
     let currentIndex = 0;
 
+    // =============================================
+    // LIGHTBOX
+    // =============================================
     function abrirLightbox(index) {
         if (!currentImages.length) return;
         currentIndex = index;
-        const img = document.getElementById('lightboxImg');
-        img.src = currentImages[currentIndex];
+        document.getElementById('lightboxImg').src = currentImages[currentIndex];
         document.getElementById('lightbox').classList.add('active');
         atualizarContador();
-        document.body.style.overflow = 'hidden'; // travar scroll
+        document.body.style.overflow = 'hidden';
     }
 
     function fecharLightbox() {
@@ -383,33 +438,37 @@
             return;
         }
 
-        // Salvar imagens para o lightbox
+        // Carregar imagens
         currentImages = product.images && product.images.length > 0 ? product.images : [];
         if (currentImages.length === 0) {
-            // Fallback com emojis
-            currentImages = ['📸', '📷', '🖼️'];
+            currentImages = ['📸', '📷', '🖼️']; // fallback
         }
 
-        // ======== GERAR GALERIA (IMAGENS MAIORES) ========
-        let galleryHtml = '';
-        if (product.images && product.images.length > 0) {
-            product.images.forEach((imgUrl, index) => {
-                galleryHtml += `
-                    <div class="gallery-item" onclick="abrirLightbox(${index})">
-                        <img src="${imgUrl}" alt="${product.name}" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\\'fallback-emoji\\'>${product.emoji || '📦'}</span>'">
-                    </div>
-                `;
-            });
+        // ======== IMAGEM PRINCIPAL ========
+        let mainImageSrc = currentImages[0] || '';
+        let mainImageHtml = '';
+        if (mainImageSrc.startsWith('http')) {
+            mainImageHtml = `<img src="${mainImageSrc}" alt="${product.name}" id="mainImage" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\\'font-size:48px;color:#30363d;\\'>${product.emoji || '📦'}</span>'">`;
         } else {
-            // Fallback
-            for (let i = 0; i < 3; i++) {
-                galleryHtml += `
-                    <div class="gallery-item" onclick="abrirLightbox(${i})">
-                        <span class="fallback-emoji">📷</span>
-                    </div>
-                `;
-            }
+            mainImageHtml = `<span style="font-size:48px;color:#30363d;">${mainImageSrc}</span>`;
         }
+
+        // ======== MINIATURAS ========
+        let thumbnailsHtml = '';
+        currentImages.forEach((img, index) => {
+            let thumbContent = '';
+            if (typeof img === 'string' && img.startsWith('http')) {
+                thumbContent = `<img src="${img}" alt="Miniatura ${index+1}" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\\'fallback-emoji\\'>📷</span>'">`;
+            } else {
+                thumbContent = `<span class="fallback-emoji">${img}</span>`;
+            }
+            const activeClass = index === 0 ? 'active' : '';
+            thumbnailsHtml += `
+                <div class="thumbnail ${activeClass}" data-index="${index}" onclick="trocarImagemPrincipal(${index})">
+                    ${thumbContent}
+                </div>
+            `;
+        });
 
         // ======== ESPECIFICAÇÕES ========
         let specsHtml = '';
@@ -439,8 +498,13 @@
                 <div class="price">${product.price}</div>
             </div>
 
-            <div class="gallery">
-                ${galleryHtml}
+            <div class="gallery-container">
+                <div class="main-image" onclick="abrirLightbox(0)">
+                    ${mainImageHtml}
+                </div>
+                <div class="thumbnails" id="thumbnailsContainer">
+                    ${thumbnailsHtml}
+                </div>
             </div>
 
             <div class="info-box">
@@ -454,7 +518,6 @@
                 <ul>${specsHtml}</ul>
             </div>
 
-            <!-- BOTÃO WHATSAPP -->
             <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
                 `Olá, UpTech! Vi no site e quero comprar: ${product.name} (${product.price}). Tem entrega para Barro Alto/Mulungu/Canarana? 🛍️`
             )}" target="_blank" class="btn-whatsapp">
@@ -463,9 +526,30 @@
         `;
 
         document.getElementById('productDetail').innerHTML = html;
-
-        // Atualiza o contador do lightbox (já tem currentImages)
         atualizarContador();
+    }
+
+    // =============================================
+    // FUNÇÃO PARA TROCAR A IMAGEM PRINCIPAL
+    // =============================================
+    function trocarImagemPrincipal(index) {
+        if (!currentImages.length) return;
+        const imgSrc = currentImages[index];
+        const mainImg = document.getElementById('mainImage');
+        if (mainImg) {
+            mainImg.src = imgSrc;
+        } else {
+            // Se a imagem principal for um emoji fallback, recria
+            const mainContainer = document.querySelector('.main-image');
+            if (mainContainer) {
+                mainContainer.innerHTML = `<img src="${imgSrc}" alt="Produto" id="mainImage" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\\'font-size:48px;color:#30363d;\\'>📷</span>'">`;
+            }
+        }
+
+        // Atualiza a classe 'active' nas miniaturas
+        document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === index);
+        });
     }
 
     // =============================================
@@ -474,15 +558,13 @@
     document.addEventListener('DOMContentLoaded', function() {
         renderizarProduto();
 
-        // Fechar com o X
+        // Fechar lightbox
         document.getElementById('closeLightbox').addEventListener('click', fecharLightbox);
-
-        // Fechar clicando fora da imagem (no fundo escuro)
         document.getElementById('lightbox').addEventListener('click', function(e) {
             if (e.target === this) fecharLightbox();
         });
 
-        // Navegação com setas
+        // Navegação
         document.getElementById('prevImage').addEventListener('click', function(e) {
             e.stopPropagation();
             navegar(-1);
@@ -492,7 +574,7 @@
             navegar(1);
         });
 
-        // Teclado: ESC fecha, setas esquerda/direita navegam
+        // Teclado
         document.addEventListener('keydown', function(e) {
             if (!document.getElementById('lightbox').classList.contains('active')) return;
             if (e.key === 'Escape') fecharLightbox();
