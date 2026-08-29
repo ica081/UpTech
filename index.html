@@ -114,11 +114,22 @@
             background: #0d1117;
             border: 1px solid #21262d;
             border-radius: 14px;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
             flex-shrink: 0;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-image .fallback-emoji {
+            font-size: 32px;
+            color: #30363d;
         }
 
         .product-info {
@@ -183,7 +194,7 @@
         @media (max-width: 420px) {
             .product-card { padding: 12px; }
             .btn-detail { padding: 6px 12px; font-size: 11px; }
-            .product-image { width: 60px; height: 60px; min-width: 60px; font-size: 26px; }
+            .product-image { width: 60px; height: 60px; min-width: 60px; }
             .header h1 { font-size: 28px; }
         }
     </style>
@@ -220,10 +231,18 @@
         let html = '';
 
         products.forEach(prod => {
+            // Pega a primeira imagem (se existir)
+            let imageHtml = '';
+            if (prod.images && prod.images.length > 0) {
+                imageHtml = `<img src="${prod.images[0]}" alt="${prod.name}" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\\'fallback-emoji\\'>${prod.emoji || '📦'}</span>'">`;
+            } else {
+                imageHtml = `<span class="fallback-emoji">${prod.emoji || '📦'}</span>`;
+            }
+
             html += `
                 <a href="produto.html?id=${prod.id}" class="product-card">
                     <div class="product-image">
-                        <span style="font-size:32px;">${prod.emoji}</span>
+                        ${imageHtml}
                     </div>
                     <div class="product-info">
                         <h3>${prod.name}</h3>

@@ -58,12 +58,6 @@
             text-align: center;
         }
 
-        .product-header .big-emoji {
-            font-size: 72px;
-            display: block;
-            margin-bottom: 10px;
-        }
-
         .product-header h1 {
             font-size: 22px;
             color: #f0f6fc;
@@ -77,10 +71,10 @@
             margin: 8px 0;
         }
 
-        /* ========== GALERIA DE FOTOS (IMAGENS REAIS) ========== */
+        /* ========== GALERIA DE FOTOS (MAIORES) ========== */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 10px;
             margin-bottom: 20px;
         }
@@ -91,25 +85,25 @@
             border-radius: 12px;
             overflow: hidden;
             aspect-ratio: 1 / 1;
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: border-color 0.2s;
+        }
+
+        .gallery-item:active {
+            border-color: #00e5ff;
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.2s;
         }
 
-        .gallery-item img:active {
-            transform: scale(1.05);
-        }
-
-        /* Fallback se a imagem não carregar */
         .gallery-item .fallback-emoji {
-            font-size: 32px;
+            font-size: 40px;
             color: #30363d;
         }
 
@@ -152,7 +146,6 @@
             border-bottom: none;
         }
 
-        /* Destaque para "Itens incluídos" */
         .includes-box {
             background: #0d1117;
             border-left: 3px solid #00e5ff;
@@ -169,7 +162,7 @@
             margin-top: 4px;
         }
 
-        /* ========== BOTÃO WHATSAPP (SÓ AQUI!) ========== */
+        /* ========== BOTÃO WHATSAPP ========== */
         .btn-whatsapp {
             display: flex;
             align-items: center;
@@ -200,6 +193,84 @@
             font-size: 24px;
         }
 
+        /* ========== LIGHTBOX (MODAL DE IMAGENS) ========== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+            font-weight: 300;
+            transition: transform 0.2s;
+            background: none;
+            border: none;
+            line-height: 1;
+        }
+
+        .lightbox .close-btn:active {
+            transform: scale(0.8);
+        }
+
+        .lightbox .lightbox-image {
+            max-width: 90%;
+            max-height: 70vh;
+            border-radius: 12px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+            object-fit: contain;
+        }
+
+        .lightbox .nav-arrows {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+
+        .lightbox .nav-arrows button {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            font-size: 36px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s;
+            backdrop-filter: blur(4px);
+            min-width: 60px;
+        }
+
+        .lightbox .nav-arrows button:active {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(0.95);
+        }
+
+        .lightbox .counter {
+            color: #8b949e;
+            font-size: 14px;
+            margin-top: 12px;
+        }
+
         /* ========== RODAPÉ ========== */
         .footer {
             text-align: center;
@@ -211,11 +282,12 @@
         }
 
         @media (max-width: 420px) {
-            .product-header .big-emoji { font-size: 56px; }
             .product-header h1 { font-size: 18px; }
             .product-header .price { font-size: 24px; }
-            .gallery { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
+            .gallery { grid-template-columns: repeat(2, 1fr); gap: 8px; }
             .btn-whatsapp { font-size: 16px; padding: 16px; }
+            .lightbox .nav-arrows button { font-size: 28px; padding: 8px 16px; min-width: 50px; }
+            .lightbox .close-btn { top: 10px; right: 20px; font-size: 32px; }
         }
     </style>
 </head>
@@ -235,21 +307,67 @@
     </div>
 </div>
 
+<!-- LIGHTBOX (MODAL) -->
+<div id="lightbox" class="lightbox">
+    <button class="close-btn" id="closeLightbox">✕</button>
+    <img id="lightboxImg" class="lightbox-image" src="" alt="Imagem ampliada">
+    <div class="nav-arrows">
+        <button id="prevImage">‹</button>
+        <button id="nextImage">›</button>
+    </div>
+    <div class="counter" id="imageCounter">1 / 3</div>
+</div>
+
 <script src="produtos.js"></script>
 <script>
     // =============================================
-    // 🔥 NÚMERO DO WHATSAPP
+    // 🔥 CONFIGURAÇÕES
     // =============================================
     const WHATSAPP_NUMBER = "5574988316054";
 
     // =============================================
-    // ⚙️ LÓGICA PARA CARREGAR O PRODUTO
+    // ⚙️ LÓGICA DO PRODUTO
     // =============================================
     function getProductId() {
         const params = new URLSearchParams(window.location.search);
         return parseInt(params.get('id'));
     }
 
+    // Variáveis globais para o lightbox
+    let currentImages = [];
+    let currentIndex = 0;
+
+    function abrirLightbox(index) {
+        if (!currentImages.length) return;
+        currentIndex = index;
+        const img = document.getElementById('lightboxImg');
+        img.src = currentImages[currentIndex];
+        document.getElementById('lightbox').classList.add('active');
+        atualizarContador();
+        document.body.style.overflow = 'hidden'; // travar scroll
+    }
+
+    function fecharLightbox() {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function navegar(direcao) {
+        const total = currentImages.length;
+        if (total === 0) return;
+        currentIndex = (currentIndex + direcao + total) % total;
+        document.getElementById('lightboxImg').src = currentImages[currentIndex];
+        atualizarContador();
+    }
+
+    function atualizarContador() {
+        document.getElementById('imageCounter').textContent = 
+            `${currentIndex + 1} / ${currentImages.length}`;
+    }
+
+    // =============================================
+    // RENDERIZAR PÁGINA DE DETALHES
+    // =============================================
     function renderizarProduto() {
         const id = getProductId();
         const product = products.find(p => p.id === id);
@@ -265,28 +383,35 @@
             return;
         }
 
-        // ======== GERAR GALERIA DE FOTOS ========
+        // Salvar imagens para o lightbox
+        currentImages = product.images && product.images.length > 0 ? product.images : [];
+        if (currentImages.length === 0) {
+            // Fallback com emojis
+            currentImages = ['📸', '📷', '🖼️'];
+        }
+
+        // ======== GERAR GALERIA (IMAGENS MAIORES) ========
         let galleryHtml = '';
         if (product.images && product.images.length > 0) {
-            product.images.forEach(imgUrl => {
+            product.images.forEach((imgUrl, index) => {
                 galleryHtml += `
-                    <div class="gallery-item">
-                        <img src="${imgUrl}" alt="${product.name}" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\\'fallback-emoji\\'>📸</span>'">
+                    <div class="gallery-item" onclick="abrirLightbox(${index})">
+                        <img src="${imgUrl}" alt="${product.name}" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\\'fallback-emoji\\'>${product.emoji || '📦'}</span>'">
                     </div>
                 `;
             });
         } else {
-            // Fallback se não tiver imagens cadastradas
+            // Fallback
             for (let i = 0; i < 3; i++) {
                 galleryHtml += `
-                    <div class="gallery-item">
+                    <div class="gallery-item" onclick="abrirLightbox(${i})">
                         <span class="fallback-emoji">📷</span>
                     </div>
                 `;
             }
         }
 
-        // ======== MONTAR ESPECIFICAÇÕES ========
+        // ======== ESPECIFICAÇÕES ========
         let specsHtml = '';
         if (product.specs && product.specs.length > 0) {
             product.specs.forEach(spec => {
@@ -307,10 +432,9 @@
             `;
         }
 
-        // ======== MONTAR PÁGINA COMPLETA ========
+        // ======== MONTAR PÁGINA ========
         const html = `
             <div class="product-header">
-                <span class="big-emoji">${product.emoji}</span>
                 <h1>${product.name}</h1>
                 <div class="price">${product.price}</div>
             </div>
@@ -330,7 +454,7 @@
                 <ul>${specsHtml}</ul>
             </div>
 
-            <!-- 🔥 BOTÃO DO WHATSAPP - SÓ AQUI! -->
+            <!-- BOTÃO WHATSAPP -->
             <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
                 `Olá, UpTech! Vi no site e quero comprar: ${product.name} (${product.price}). Tem entrega para Barro Alto/Mulungu/Canarana? 🛍️`
             )}" target="_blank" class="btn-whatsapp">
@@ -339,9 +463,43 @@
         `;
 
         document.getElementById('productDetail').innerHTML = html;
+
+        // Atualiza o contador do lightbox (já tem currentImages)
+        atualizarContador();
     }
 
-    renderizarProduto();
+    // =============================================
+    // EVENTOS DO LIGHTBOX
+    // =============================================
+    document.addEventListener('DOMContentLoaded', function() {
+        renderizarProduto();
+
+        // Fechar com o X
+        document.getElementById('closeLightbox').addEventListener('click', fecharLightbox);
+
+        // Fechar clicando fora da imagem (no fundo escuro)
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) fecharLightbox();
+        });
+
+        // Navegação com setas
+        document.getElementById('prevImage').addEventListener('click', function(e) {
+            e.stopPropagation();
+            navegar(-1);
+        });
+        document.getElementById('nextImage').addEventListener('click', function(e) {
+            e.stopPropagation();
+            navegar(1);
+        });
+
+        // Teclado: ESC fecha, setas esquerda/direita navegam
+        document.addEventListener('keydown', function(e) {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') fecharLightbox();
+            if (e.key === 'ArrowLeft') navegar(-1);
+            if (e.key === 'ArrowRight') navegar(1);
+        });
+    });
 </script>
 
 </body>
