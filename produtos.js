@@ -10,7 +10,7 @@ const products = [
         shortDesc: "Tela AMOLED, Monitor Saúde, GPS e Bluetooth.",
         fullDesc: "O Smartwatch ULTRA PLUS combina desempenho, estilo e funcionalidades que tornam o seu dia mais eficiente e conectado. Com uma tela AMOLED vibrante, bateria de longa duração e monitoramento inteligente de saúde, o X10 ULTRA PLUS é mais do que um relógio, é seu novo parceiro para uma vida mais ativa e conectada. O X10 ULTRA PLUS oferece uma experiência visual confortável. A caixa requintada é elegante e generosa. Compatível com Android e iOS, conecta-se perfeitamente ao seu smartphone. Notificações em tempo real para que você não perca nenhuma informação importante. A função de ilha dinâmica torna sua vida inteligente mais vívida: chamadas, música, tudo está sob controle.",
         specs: [
-            "🎨 Cores disponíveis: Preto e Prata",
+            
             "📱 Compatível com Android e iOS",
             "🖥️ 8 estilos de menu interativo",
             "🔄 Coroa giratória funcional integrada ao sistema",
