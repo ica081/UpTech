@@ -108,9 +108,9 @@ const products = [
         ],
         images: [
             "https://http2.mlstatic.com/D_NQ_NP_2X_919613-MLA99972974045_112025-F.webp",
-            "https://http2.mlstatic.com/D_NQ_NP_2X_909283-MLU77998706140_082024-F.webp",
+            "https://http2.mlstatic.com/D_Q_NP_2X_638612-MLA99613970066_122025-R.webp",
             "https://http2.mlstatic.com/D_NQ_NP_2X_753279-MLU79077551499_092024-F.webp",
-            "https://http2.mlstatic.com/D_NQ_NP_2X_885849-MLU79077787181_092024-F.webp"
+            "https://http2.mlstatic.com/D_Q_NP_667084-MLA99614446986_122025-R.webp"
             
         ],
         includes: "1 Garrafa Térmica Lens Smart Cup (500ml) com visor digital.",
