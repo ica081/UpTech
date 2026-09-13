@@ -67,6 +67,7 @@
             font-size: 13px;
             font-weight: 600;
             color: #a5d6ff;
+            line-height: 1.5;
         }
 
         .header .sub-text {
@@ -78,6 +79,103 @@
             padding: 6px 14px;
             border-radius: 20px;
             display: inline-block;
+        }
+
+        /* ========== BARRA DE PESQUISA ========== */
+        .search-container {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 50px;
+            padding: 14px 20px 14px 48px;
+            color: #f0f6fc;
+            font-size: 15px;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .search-input::placeholder {
+            color: #6e7681;
+        }
+
+        .search-input:focus {
+            border-color: #00e5ff;
+            box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #6e7681;
+            pointer-events: none;
+        }
+
+        .clear-btn {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #21262d;
+            border: 1px solid #30363d;
+            color: #c9d1d9;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            font-size: 14px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            transition: all 0.2s;
+        }
+
+        .clear-btn.visible {
+            display: flex;
+        }
+
+        .clear-btn:active {
+            background: #30363d;
+        }
+
+        /* ========== SEM RESULTADOS ========== */
+        .no-results {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 18px;
+            padding: 40px 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .no-results.visible {
+            display: block;
+        }
+
+        .no-results .emoji {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .no-results h3 {
+            font-size: 16px;
+            color: #f0f6fc;
+            margin-bottom: 6px;
+        }
+
+        .no-results p {
+            font-size: 13px;
+            color: #8b949e;
         }
 
         /* ========== GRADE DE PRODUTOS (2 colunas) ========== */
@@ -105,7 +203,6 @@
             box-shadow: 0 0 20px rgba(0, 229, 255, 0.05);
         }
 
-        /* ========== IMAGEM GRANDE (destaque) ========== */
         .product-image {
             width: 100%;
             aspect-ratio: 1 / 1;
@@ -128,7 +225,6 @@
             color: #30363d;
         }
 
-        /* ========== INFORMAÇÕES DO PRODUTO (texto menor) ========== */
         .product-info {
             padding: 12px 12px 14px;
             display: flex;
@@ -146,13 +242,13 @@
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
-            height: 38px; /* Fixa a altura para 2 linhas */
+            height: 38px;
         }
 
         .product-info .price {
             font-weight: 800;
             color: #00e5ff;
-            font-size: 16px; /* 👈 PREÇO MENOR (antes era 18px/28px) */
+            font-size: 16px;
             margin: 2px 0 4px 0;
         }
 
@@ -207,6 +303,8 @@
             .product-info .price { font-size: 14px; }
             .product-info .desc { font-size: 10px; }
             .btn-detail { font-size: 11px; padding: 5px 0; }
+            .search-input { font-size: 14px; padding: 12px 18px 12px 44px; }
+            .search-icon { left: 16px; font-size: 16px; }
         }
     </style>
 </head>
@@ -218,19 +316,39 @@
         <h1>⚡ Up<span>Tech</span></h1>
         <div class="slogan">ELETRÔNICOS · HIGH TECH</div>
         <div class="region">
-            <i>📍</i>De Lagoa do Boi para região de  Barro Alto • Mulungu • Canarana
+            <i>📍</i> De Lagoa do Boi para região de Barro Alto • Mulungu • Canarana
         </div>
         <div class="sub-text">
             👆 Toque no produto para ver os detalhes
         </div>
         <div class="sub-text">
-            A cada 10km de Lagoa de boi será cobrado 10 reais do frete
+            A cada 10km de Lagoa do Boi será cobrado R$ 10 do frete
         </div>
+    </div>
+
+    <!-- BARRA DE PESQUISA -->
+    <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input 
+            type="text" 
+            id="searchInput" 
+            class="search-input" 
+            placeholder="Buscar produto... (ex: fone, câmera)" 
+            autocomplete="off"
+        >
+        <button class="clear-btn" id="clearBtn" onclick="limparBusca()">✕</button>
     </div>
 
     <!-- GRADE DE PRODUTOS -->
     <div class="product-grid" id="productList">
         <!-- Os produtos são carregados via JavaScript -->
+    </div>
+
+    <!-- MENSAGEM DE NENHUM RESULTADO -->
+    <div class="no-results" id="noResults">
+        <span class="emoji">🔍</span>
+        <h3>Nenhum produto encontrado</h3>
+        <p>Tente buscar por outro nome ou palavra-chave.</p>
     </div>
 
     <div class="footer">
@@ -240,11 +358,23 @@
 
 <script src="produtos.js"></script>
 <script>
-    function renderizarVitrine() {
+    // =============================================
+    // RENDERIZAÇÃO DA VITRINE
+    // =============================================
+    function renderizarVitrine(lista = products) {
         const container = document.getElementById('productList');
+        const noResults = document.getElementById('noResults');
         let html = '';
 
-        products.forEach(prod => {
+        if (lista.length === 0) {
+            container.innerHTML = '';
+            noResults.classList.add('visible');
+            return;
+        }
+
+        noResults.classList.remove('visible');
+
+        lista.forEach(prod => {
             // 🔥 PEGA A PRIMEIRA IMAGEM (IMAGEM GRANDE EM DESTAQUE)
             let imageHtml = '';
             if (prod.images && prod.images.length > 0) {
@@ -271,7 +401,56 @@
         container.innerHTML = html;
     }
 
-    renderizarVitrine();
+    // =============================================
+    // 🔍 FUNÇÃO DE BUSCA
+    // =============================================
+    function filtrarProdutos() {
+        const termo = document.getElementById('searchInput').value.toLowerCase().trim();
+        const clearBtn = document.getElementById('clearBtn');
+
+        // Mostra/esconde o botão de limpar
+        if (termo.length > 0) {
+            clearBtn.classList.add('visible');
+        } else {
+            clearBtn.classList.remove('visible');
+        }
+
+        // Se o campo estiver vazio, mostra todos
+        if (termo === '') {
+            renderizarVitrine(products);
+            return;
+        }
+
+        // Filtra por nome OU descrição curta
+        const filtrados = products.filter(prod => {
+            const nome = prod.name.toLowerCase();
+            const desc = (prod.shortDesc || '').toLowerCase();
+            const descFull = (prod.fullDesc || '').toLowerCase();
+            return nome.includes(termo) || desc.includes(termo) || descFull.includes(termo);
+        });
+
+        renderizarVitrine(filtrados);
+    }
+
+    // =============================================
+    // 🧹 LIMPAR BUSCA
+    // =============================================
+    function limparBusca() {
+        document.getElementById('searchInput').value = '';
+        document.getElementById('clearBtn').classList.remove('visible');
+        renderizarVitrine(products);
+        document.getElementById('searchInput').focus();
+    }
+
+    // =============================================
+    // INICIALIZAÇÃO
+    // =============================================
+    document.addEventListener('DOMContentLoaded', function() {
+        renderizarVitrine(products);
+
+        // Filtra a cada letra digitada (tempo real)
+        document.getElementById('searchInput').addEventListener('input', filtrarProdutos);
+    });
 </script>
 
 </body>
