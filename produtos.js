@@ -3,7 +3,7 @@
 // =============================================
 const products = [
     // ==========================================
-    // 📹 CÂMERA DE SEGURANÇA (mantida)
+    // 📹 CÂMERA DE SEGURANÇA
     // ==========================================
     {
         id: 1,
@@ -35,7 +35,7 @@ const products = [
     },
 
     // ==========================================
-    // 🎧 FONE M10 (mantido)
+    // 🎧 FONE M10
     // ==========================================
     {
         id: 2,
@@ -66,141 +66,153 @@ const products = [
     },
 
     // ==========================================
-    // 🔌 CARREGADOR DE BATERIA VEICULAR (4 unidades)
+    // 🔌 CARREGADOR DE BATERIA VEICULAR
     // ==========================================
     {
         id: 3,
         name: "Carregador de Bateria para Veículos",
         emoji: "🔌",
-        price: "R$ 00,00", // 👈 DEFINIR PREÇO
+        price: "R$ 00,00",
         shortDesc: "Carregador de bateria automotiva. Descrição em breve.",
         fullDesc: "Descrição completa em breve. Este produto será atualizado com todas as informações técnicas e detalhes.",
-        specs: [
-            "📝 Especificações em breve"
-        ],
-        images: [
-            // 👈 ADICIONAR IMAGENS AQUI
-        ],
+        specs: ["📝 Especificações em breve"],
+        images: [],
         includes: "📦 Itens inclusos serão adicionados em breve.",
         stock: 4
     },
 
     // ==========================================
-    // 🔦 LANTERNA RECARREGÁVEL (2 unidades)
+    // 🔦 LANTERNA LED RECARREGÁVEL
     // ==========================================
     {
         id: 4,
-        name: "Lanterna Recarregável",
+        name: "Lanterna LED Recarregável Onistek",
         emoji: "🔦",
-        price: "R$ 00,00", // 👈 DEFINIR PREÇO
-        shortDesc: "Lanterna recarregável de alta potência. Descrição em breve.",
-        fullDesc: "Descrição completa em breve. Este produto será atualizado com todas as informações técnicas e detalhes.",
+        price: "R$ 59,90",
+        shortDesc: "Compacta, potente, USB e função power bank.",
+        fullDesc: "Tenha iluminação potente sempre à mão! A Lanterna LED Recarregável Onistek é compacta, leve e prática, ideal para uso em casa, carro, camping, trilhas, pesca, viagens e situações de emergência. Oferece iluminação de alta intensidade com excelente alcance para diferentes situações. A bateria recarregável dispensa pilhas descartáveis: basta recarregar via USB e ter sua lanterna sempre pronta para usar. Também possui função de bateria portátil (power bank), podendo ser utilizada para manter seus dispositivos carregados em situações de emergência. Resistente a respingos de água, é perfeita para o uso cotidiano em ambientes externos. Compacta e leve, com aproximadamente 15 cm de comprimento e 150 g, cabe na mochila, bolsa ou porta-luvas.",
         specs: [
-            "📝 Especificações em breve"
+            "💡 Iluminação de alta intensidade (até 7.360 modos/alcance)",
+            "🔋 Bateria recarregável (dispensa pilhas)",
+            "⚡ Função power bank para emergências",
+            "💧 Resistente a respingos de água e chuva leve",
+            "📏 Comprimento: 15 cm",
+            "📐 Diâmetro do corpo: 3 cm",
+            "⚖️ Peso aproximado: 150 g",
+            "🔌 Recarga via USB",
+            "🎨 Cor: Preto",
+            "🏕️ Ideal para camping, trilhas, pesca e emergências"
         ],
         images: [
-            // 👈 ADICIONAR IMAGENS AQUI
+            "https://http2.mlstatic.com/D_NQ_NP_2X_863576-MLB115963686022_092026-F-kit-2-lanternas-led-taticas-recarregaveis-usb-300m.webp"
         ],
-        includes: "📦 Itens inclusos serão adicionados em breve.",
+        includes: "1x Lanterna LED Onistek, 1x Cabo Micro USB e 1x Cabo USB-C.",
         stock: 2
     },
 
     // ==========================================
-    // 🔗 CABO USB TIPO C 2M (2 unidades)
+    // 🔗 CABO USB TIPO C 2M (X-Cell 25W)
     // ==========================================
     {
         id: 5,
-        name: "Cabo USB Tipo C de 2 Metros",
+        name: "Cabo Turbo USB-C 2M X-Cell 25W",
         emoji: "🔗",
-        price: "R$ 00,00", // 👈 DEFINIR PREÇO
-        shortDesc: "Cabo USB-C de 2 metros. Descrição em breve.",
-        fullDesc: "Descrição completa em breve. Este produto será atualizado com todas as informações técnicas e detalhes.",
+        price: "R$ 19,90",
+        shortDesc: "2 metros, 25W Turbo, USB-A para USB-C.",
+        fullDesc: "Procurando um cabo resistente, longo e com carregamento ultra rápido? O Cabo X-Cell XC-CD-146 de 25W oferece a máxima eficiência para carregar seus dispositivos e transferir arquivos com alta velocidade e segurança. Com 2 metros de comprimento, você garante total comodidade para usar seu smartphone ou tablet enquanto ele carrega, seja no sofá, na cama ou no escritório. Fabricado com materiais de alta qualidade para evitar quebras e garantir maior durabilidade nos conectores. Funciona com todos os dispositivos com entrada USB-C (Samsung, Xiaomi, Motorola, LG, entre outros).",
         specs: [
-            "📝 Especificações em breve"
+            "⚡ Carregamento Turbo 25W (Fast Charge / Quick Charge)",
+            "📏 Comprimento: 2 metros",
+            "🔄 Transferência de dados: até 480 Mbps",
+            "🔌 Conectores: USB-A para USB Type-C",
+            "🛡️ Construção reforçada contra quebras",
+            "📱 Compatível com Samsung, Xiaomi, Motorola, LG e outros",
+            "🎨 Cor: Preto",
+            "🏷️ Marca: X-Cell | Modelo: XC-CD-146",
+            "🧵 Material: PVC e cobre de alta condutividade"
         ],
         images: [
-            // 👈 ADICIONAR IMAGENS AQUI
+            // 👈 ADICIONAR IMAGEM AQUI (o link do Google que você mandou pode expirar)
         ],
-        includes: "📦 Itens inclusos serão adicionados em breve.",
+        includes: "1x Cabo Turbo USB para Type-C 2M X-Cell XC-CD-146.",
         stock: 2
     },
 
     // ==========================================
-    // 📱 CAPINHA MAGNÉTICA IPHONE 13 PRO MAX (3 unidades)
+    // 📱 CAPINHA MAGNÉTICA IPHONE 13 PRO MAX
     // ==========================================
     {
         id: 6,
         name: "Capinha Magnética Transparente iPhone 13 Pro Max",
         emoji: "📱",
-        price: "R$ 00,00", // 👈 DEFINIR PREÇO
+        price: "R$ 00,00",
         shortDesc: "Capinha magnética transparente. Descrição em breve.",
         fullDesc: "Descrição completa em breve. Este produto será atualizado com todas as informações técnicas e detalhes.",
-        specs: [
-            "📝 Especificações em breve"
-        ],
-        images: [
-            // 👈 ADICIONAR IMAGENS AQUI
-        ],
+        specs: ["📝 Especificações em breve"],
+        images: [],
         includes: "📦 Itens inclusos serão adicionados em breve.",
         stock: 3
     },
 
     // ==========================================
-    // 🎧 FONE BLUETOOTH COM APOIO PARA ORELHA (2 unidades)
+    // 🎧 FONE BLUETOOTH COM APOIO PARA ORELHA
     // ==========================================
     {
         id: 7,
         name: "Fone Bluetooth com Apoio para Orelha",
         emoji: "🎧",
-        price: "R$ 00,00", // 👈 DEFINIR PREÇO
+        price: "R$ 00,00",
         shortDesc: "Fone Bluetooth com apoio para orelha. Descrição em breve.",
         fullDesc: "Descrição completa em breve. Este produto será atualizado com todas as informações técnicas e detalhes.",
-        specs: [
-            "📝 Especificações em breve"
-        ],
-        images: [
-            // 👈 ADICIONAR IMAGENS AQUI
-        ],
+        specs: ["📝 Especificações em breve"],
+        images: [],
         includes: "📦 Itens inclusos serão adicionados em breve.",
         stock: 2
     },
 
     // ==========================================
-    // 💇 APARADOR DE CORPO FEMININO (1 unidade)
+    // 💇 DEPILADOR FEMININO 4 EM 1
     // ==========================================
     {
         id: 8,
-        name: "Aparador de Corpo Feminino",
+        name: "Depilador Elétrico Feminino 4 em 1",
         emoji: "💇‍♀️",
-        price: "R$ 00,00", // 👈 DEFINIR PREÇO
-        shortDesc: "Aparador de corpo feminino. Descrição em breve.",
-        fullDesc: "Descrição completa em breve. Este produto será atualizado com todas as informações técnicas e detalhes.",
+        price: "R$ 59,90",
+        shortDesc: "Rosto e corpo, 4 cabeçotes, bivolt, sem irritação.",
+        fullDesc: "Depilador elétrico feminino 4 em 1 para rosto e corpo. Quatro cabeçotes intercambiáveis, acabamento suave sem puxar ou machucar. Indicado para uso diário inclusive em peles sensíveis. Remove pelos sem arrancar, reduzindo irritações. Portátil e leve, é ideal para levar em viagens ou usar no dia a dia. Encaixe o cabeçote adequado à área desejada, ligue no botão deslizante frontal e deslize suavemente sobre a pele limpa e seca no sentido contrário ao crescimento dos pelos. Após o uso, remova o cabeçote e limpe com a escova inclusa. Produto verificado antes do envio. Enviamos com agilidade e cuidado na embalagem.",
         specs: [
-            "📝 Especificações em breve"
+            "✨ 4 em 1: depilador corporal, aparador facial, de sobrancelhas e de nariz",
+            "🔌 Bivolt (127/220V)",
+            "📦 Acompanha 4 cabeçotes e escova de limpeza",
+            "🌸 Remove pelos sem arrancar, reduzindo irritações",
+            "💆‍♀️ Indicado para axilas, braços, buço, nariz, virilha, pernas, rosto e sobrancelhas",
+            "🪶 Portátil e leve",
+            "🔇 Ruído moderado",
+            "✂️ Pelos longos devem ser aparados antes do uso",
+            "⚠️ Não indicado para pelos grossos ou muito longos",
+            "🛡️ Garantia do vendedor: 7 dias contra defeitos de fabricação"
         ],
         images: [
-            // 👈 ADICIONAR IMAGENS AQUI
+            "https://http2.mlstatic.com/D_NQ_NP_2X_887143-MLB114706939588_082026-F-depilador-feminino-4-em-1-eletrico-rosto-corpo-pelos-intimos.webp",
+            "https://http2.mlstatic.com/D_NQ_NP_2X_657750-MLB113771007385_062026-F-depilador-feminino-4-em-1-eletrico-rosto-corpo-pelos-intimos.webp",
+            "https://http2.mlstatic.com/D_NQ_NP_2X_948375-MLB113770127403_062026-F-depilador-feminino-4-em-1-eletrico-rosto-corpo-pelos-intimos.webp"
         ],
-        includes: "📦 Itens inclusos serão adicionados em breve.",
+        includes: "1x Depilador Elétrico Feminino 4 em 1, 4 cabeçotes intercambiáveis, escova de limpeza e manual de instruções.",
         stock: 1
     },
 
     // ==========================================
-    // 💇 APARADOR DE CORPO MASCULINO (1 unidade)
+    // 💇 APARADOR DE CORPO MASCULINO
     // ==========================================
     {
         id: 9,
         name: "Aparador de Corpo Masculino",
         emoji: "💇‍♂️",
-        price: "R$ 00,00", // 👈 DEFINIR PREÇO
+        price: "R$ 00,00",
         shortDesc: "Aparador de corpo masculino. Descrição em breve.",
         fullDesc: "Descrição completa em breve. Este produto será atualizado com todas as informações técnicas e detalhes.",
-        specs: [
-            "📝 Especificações em breve"
-        ],
-        images: [
-            // 👈 ADICIONAR IMAGENS AQUI
-        ],
+        specs: ["📝 Especificações em breve"],
+        images: [],
         includes: "📦 Itens inclusos serão adicionados em breve.",
         stock: 1
     }
