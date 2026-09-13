@@ -70,14 +70,28 @@ const products = [
     // ==========================================
     {
         id: 3,
-        name: "Carregador de Bateria para Veículos",
+        name: "Carregador de Bateria Veicular 12V Bivolt Automático",
         emoji: "🔌",
-        price: "R$ 00,00",
-        shortDesc: "Carregador de bateria automotiva. Descrição em breve.",
-        fullDesc: "Descrição completa em breve. Este produto será atualizado com todas as informações técnicas e detalhes.",
-        specs: ["📝 Especificações em breve"],
-        images: [],
-        includes: "📦 Itens inclusos serão adicionados em breve.",
+        price: "R$ 59,90",
+        shortDesc: "Bivolt automático, 2A, para carros e motos.",
+        fullDesc: "Garanta que seu veículo esteja sempre pronto para rodar! O Carregador de Bateria Veicular 12V é a solução prática e eficiente para recarregar e manter a carga da bateria de carros, motos e utilitários, evitando imprevistos no dia a dia. Com design compacto e operação inteligente, ele é ideal para guardar no porta-luvas ou porta-malas do seu veículo. Possui indicador LED que sinaliza o status do carregamento e é compatível com baterias chumbo-ácido de 12V.",
+        specs: [
+            "🔌 Bivolt Automático (12V a 240V)",
+            "🔋 Tensão de saída: 12V",
+            "⚡ Corrente de saída: 2 A",
+            "💪 Potência: 30 W",
+            "🔋 Compatível com baterias Chumbo-Ácido 12V",
+            "🚗 Aplicações: Carros, motos e utilitários",
+            "💡 Indicador LED integrado",
+            "📏 Comprimento do cabo: 1 metro",
+            "📐 Dimensões: 17 cm x 8 cm x 3,5 cm",
+            "🐊 Conexão: Garras jacaré"
+        ],
+        images: [
+            "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS1zcjrC6wP1EtzPgRVUNbEODcplhqt_8ux5ClV4lCRY2cJ4ypvut3dY6T3P3DYpX5zFBgwLowX0x4qKOq8Uk3e7X-B_bmEYPfWiD-CuZGC7CbWAonYEAJYSjy1vZE4yT2X-hiVoiI0rF0&usqp=CAc",
+            "https://http2.mlstatic.com/D_NQ_NP_2X_678182-MLA111615934686_062026-F.webp"
+        ],
+        includes: "1x Carregador de Bateria Veicular 12V, 1x Cabo de Alimentação (1m) e 1x Par de Garras de Conexão (Jacaré).",
         stock: 4
     },
 
@@ -146,12 +160,24 @@ const products = [
         id: 6,
         name: "Capinha Magnética Transparente iPhone 13 Pro Max",
         emoji: "📱",
-        price: "R$ 00,00",
-        shortDesc: "Capinha magnética transparente. Descrição em breve.",
-        fullDesc: "Descrição completa em breve. Este produto será atualizado com todas as informações técnicas e detalhes.",
-        specs: ["📝 Especificações em breve"],
-        images: [],
-        includes: "📦 Itens inclusos serão adicionados em breve.",
+        price: "R$ 24,90",
+        shortDesc: "Anti Impacto, MagSafe, TPU e Policarbonato.",
+        fullDesc: "Proteja seu iPhone 13 Pro Max com elegância e praticidade sem esconder o design original do aparelho. A capinha transparente com tecnologia MagSafe integrada foi desenvolvida para oferecer máxima proteção contra quedas e arranhões, garantindo perfeito alinhamento magnético. Possui bordas reforçadas e elevação nas áreas da câmera e tela para absorver choques e impactos do dia a dia. Preserva a cor e a beleza original do seu aparelho, com botões macios, recortes precisos e excelente aderência.",
+        specs: [
+            "🧲 Imã MagSafe Integrado",
+            "🛡️ Proteção Anti Impacto (bordas reforçadas)",
+            "✨ Transparência Cristalina",
+            "📱 Encaixe Perfeito (botões e recortes precisos)",
+            "🖐️ Pegada Confortável e antiderrapante",
+            "🔄 Compatível com MagSafe e Padrão Qi",
+            "🧵 Material: TPU de Alta Qualidade e Policarbonato",
+            "📐 Compatibilidade: iPhone 13 Pro Max",
+            "🎨 Cor: Transparente"
+        ],
+        images: [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAPWyoFzriQB1imzm2aexsHRGio8_2buZgmNWrG7swwA&s=10"
+        ],
+        includes: "1x Capinha Transparente MagSafe Para iPhone 13 Pro Max.",
         stock: 3
     },
 
@@ -207,14 +233,28 @@ const products = [
     // ==========================================
     {
         id: 9,
-        name: "Aparador de Corpo Masculino",
+        name: "Aparador de Pelos Corporal Masculino Íntimo Prova D'água",
         emoji: "💇‍♂️",
-        price: "R$ 00,00",
-        shortDesc: "Aparador de corpo masculino. Descrição em breve.",
-        fullDesc: "Descrição completa em breve. Este produto será atualizado com todas as informações técnicas e detalhes.",
-        specs: ["📝 Especificações em breve"],
-        images: [],
-        includes: "📦 Itens inclusos serão adicionados em breve.",
+        price: "R$ 24,90",
+        shortDesc: "Prova d'água IPX7, sem fio, lâmina de cerâmica.",
+        fullDesc: "Cuidar do visual e da higiene pessoal ficou muito mais simples, rápido e seguro! O Aparador de Pelos Corporal Masculino foi projetado para oferecer a máxima precisão em cortes corporais, desde a barba e cabelo até as áreas mais sensíveis, garantindo conforto total sem puxões ou irritações na pele. Sua lâmina de cerâmica de alta qualidade aliada ao motor de alta potência de 6.000 RPM entrega um resultado impecável com total segurança. É resistente à água (IPX7), totalmente lavável, facilitando a limpeza e possibilitando o uso durante o banho. Possui bateria recarregável de carga rápida via USB (1 hora) e oferece até 60 minutos de uso contínuo.",
+        specs: [
+            "🛡️ Lâmina de Cerâmica Segura (dentes arredondados)",
+            "💧 Resistente à Água (IPX7) - lavável",
+            "🔋 Bateria Recarregável (500 mAh) - carga via USB",
+            "⚡ Motor Potente de 6.000 RPM",
+            "⏱️ Até 60 minutos de uso contínuo",
+            "🔌 Bivolt (127V/220V) - Recarregável via USB",
+            "🎯 Zonas de aplicação: Barba, cabeça, peito, axilas, pernas e área íntima",
+            "⚖️ Potência Nominal: 5W",
+            "🔋 Tensão: 3,2V | Entrada: 5V (USB)",
+            "📏 Material da lâmina: Cerâmica com dentes arredondados"
+        ],
+        images: [
+            "https://ae-pic-a1.aliexpress-media.com/kf/Se342b01bf43b4bc4b9e0dd3671ec726dC.jpg?has_lang=1&ver=2_220x220q75.jpg_.avif",
+            "https://ae-pic-a1.aliexpress-media.com/kf/Saf7815fd1ab6485792911fc51f3164f7U.jpg_220x220q75.jpg_.avif"
+        ],
+        includes: "1x Aparador de Pelos Principal, 1x Pente de Ajuste, 1x Cabo de Carregamento USB e 1x Escova de Limpeza.",
         stock: 1
     }
 ];
