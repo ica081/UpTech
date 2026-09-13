@@ -104,7 +104,7 @@ const products = [
             "🏕️ Ideal para camping, trilhas, pesca e emergências"
         ],
         images: [
-            "https://http2.mlstatic.com/D_NQ_NP_2X_863576-MLB115963686022_092026-F-kit-2-lanternas-led-taticas-recarregaveis-usb-300m.webp"
+            "https://i.imgur.com/0ijfCm8.png"
         ],
         includes: "1x Lanterna LED Onistek, 1x Cabo Micro USB e 1x Cabo USB-C.",
         stock: 2
@@ -132,7 +132,8 @@ const products = [
             "🧵 Material: PVC e cobre de alta condutividade"
         ],
         images: [
-            // 👈 ADICIONAR IMAGEM AQUI (o link do Google que você mandou pode expirar)
+            "https://i.imgur.com/DsQrxNx.png",
+            "https://i.imgur.com/30Ig2zY.png"
         ],
         includes: "1x Cabo Turbo USB para Type-C 2M X-Cell XC-CD-146.",
         stock: 2
