@@ -119,6 +119,7 @@ const products = [
         ],
         images: [
             "https://i.imgur.com/0ijfCm8.png"
+            "https://http2.mlstatic.com/D_NQ_NP_2X_990804-MLB115963420162_092026-F-kit-2-lanternas-led-taticas-recarregaveis-usb-300m.webp"
         ],
         includes: "1x Lanterna LED Onistek, 1x Cabo Micro USB e 1x Cabo USB-C.",
         stock: 2
@@ -129,7 +130,7 @@ const products = [
     // ==========================================
     {
         id: 5,
-        name: "Cabo Turbo USB-C 2M X-Cell 25W",
+        name: "Cabo Turbo USB tipo-C 2M",
         emoji: "🔗",
         price: "R$ 19,90",
         shortDesc: "2 metros, 25W Turbo, USB-A para USB-C.",
