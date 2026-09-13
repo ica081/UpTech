@@ -333,7 +333,7 @@
             type="text" 
             id="searchInput" 
             class="search-input" 
-            placeholder="Buscar produto... (ex: fone, câmera)" 
+            placeholder="Buscar produto... (ex: camera, fone)" 
             autocomplete="off"
         >
         <button class="clear-btn" id="clearBtn" onclick="limparBusca()">✕</button>
@@ -358,6 +358,19 @@
 
 <script src="produtos.js"></script>
 <script>
+    // =============================================
+    // 🔧 FUNÇÃO PARA REMOVER ACENTOS
+    // "câmera" → "camera" | "Fone" → "fone" | "Áudio" → "audio"
+    // =============================================
+    function normalizar(texto) {
+        return (texto || '')
+            .toString()
+            .toLowerCase()
+            .normalize('NFD')                      // separa letra do acento
+            .replace(/[\u0300-\u036f]/g, '')       // remove os acentos
+            .trim();                               // remove espaços nas pontas
+    }
+
     // =============================================
     // RENDERIZAÇÃO DA VITRINE
     // =============================================
@@ -402,10 +415,11 @@
     }
 
     // =============================================
-    // 🔍 FUNÇÃO DE BUSCA
+    // 🔍 FUNÇÃO DE BUSCA (SEM ACENTO)
     // =============================================
     function filtrarProdutos() {
-        const termo = document.getElementById('searchInput').value.toLowerCase().trim();
+        const termoOriginal = document.getElementById('searchInput').value;
+        const termo = normalizar(termoOriginal);
         const clearBtn = document.getElementById('clearBtn');
 
         // Mostra/esconde o botão de limpar
@@ -421,12 +435,16 @@
             return;
         }
 
-        // Filtra por nome OU descrição curta
+        // Filtra por nome OU descrições (ambos normalizados sem acento)
         const filtrados = products.filter(prod => {
-            const nome = prod.name.toLowerCase();
-            const desc = (prod.shortDesc || '').toLowerCase();
-            const descFull = (prod.fullDesc || '').toLowerCase();
-            return nome.includes(termo) || desc.includes(termo) || descFull.includes(termo);
+            const nome = normalizar(prod.name);
+            const desc = normalizar(prod.shortDesc);
+            const descFull = normalizar(prod.fullDesc);
+            const specs = normalizar((prod.specs || []).join(' '));
+            return nome.includes(termo) 
+                || desc.includes(termo) 
+                || descFull.includes(termo)
+                || specs.includes(termo);
         });
 
         renderizarVitrine(filtrados);
