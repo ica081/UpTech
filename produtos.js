@@ -187,14 +187,27 @@ const products = [
     // ==========================================
     {
         id: 7,
-        name: "Fone Bluetooth com Apoio para Orelha",
+        name: "Fone Bluetooth com Apoio para Orelha DIXSG",
         emoji: "🎧",
-        price: "R$ 00,00",
-        shortDesc: "Fone Bluetooth com apoio para orelha. Descrição em breve.",
-        fullDesc: "Descrição completa em breve. Este produto será atualizado com todas as informações técnicas e detalhes.",
-        specs: ["📝 Especificações em breve"],
-        images: [],
-        includes: "📦 Itens inclusos serão adicionados em breve.",
+        price: "R$ 64,90",
+        shortDesc: "Bluetooth 5.3, Cancelamento Ativo de Ruído, design ergonômico.",
+        fullDesc: "Fone de ouvido sem fio com tecnologia Bluetooth 5.3, que oferece conexão estável e transmissão de áudio de alta fidelidade sem interrupções, perfeito para músicas, chamadas e vídeos com qualidade superior. Com cancelamento ativo de ruído integrado, este fone reduz eficientemente sons ambientais, proporcionando uma experiência auditiva imersiva em qualquer ambiente, mesmo em locais barulhentos. Utiliza tecnologia híbrida para reproduzir áudio com clareza e profundidade, equilibrando graves potentes, médios nítidos e agudos definidos para um som de alta qualidade. Feito com material plástico de alta qualidade, o fone é leve e confortável para uso prolongado, com design ergonômico que se adapta perfeitamente ao ouvido, ideal para uso diário.",
+        specs: [
+            "📶 Bluetooth 5.3 (conexão estável)",
+            "🎧 Transmissão de áudio de alta fidelidade",
+            "🔇 Cancelamento Ativo de Ruído (ANC)",
+            "🔊 Tecnologia híbrida (graves, médios e agudos equilibrados)",
+            "🪶 Design ergonômico e leve em plástico",
+            "👂 Apoio para orelha (estabilidade durante o uso)",
+            "📱 Ideal para músicas, chamadas e vídeos",
+            "⚡ Conexão sem fio (sem cabos)",
+            "🎯 Uso diário confortável"
+        ],
+        images: [
+            "https://ae-pic-a1.aliexpress-media.com/kf/Sd0e70480fe4b4108b1ecd69e10f40897n.jpg_220x220q75.jpg_.avif",
+            "https://ae-pic-a1.aliexpress-media.com/kf/S7a106606b9bc4535b19c931b291dd39bt.jpg_220x220q75.jpg_.avif"
+        ],
+        includes: "1x Fone Bluetooth DIXSG, 1x estojo de carregamento e 1x cabo de carregamento USB.",
         stock: 2
     },
 
