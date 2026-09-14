@@ -249,7 +249,7 @@ const products = [
         id: 9,
         name: "Aparador de Pelos Corporal Masculino Íntimo Prova D'água",
         emoji: "💇‍♂️",
-        price: "R$ 24,90",
+        price: "R$ 64,90",
         shortDesc: "Prova d'água IPX7, sem fio, lâmina de cerâmica.",
         fullDesc: "Cuidar do visual e da higiene pessoal ficou muito mais simples, rápido e seguro! O Aparador de Pelos Corporal Masculino foi projetado para oferecer a máxima precisão em cortes corporais, desde a barba e cabelo até as áreas mais sensíveis, garantindo conforto total sem puxões ou irritações na pele. Sua lâmina de cerâmica de alta qualidade aliada ao motor de alta potência de 6.000 RPM entrega um resultado impecável com total segurança. É resistente à água (IPX7), totalmente lavável, facilitando a limpeza e possibilitando o uso durante o banho. Possui bateria recarregável de carga rápida via USB (1 hora) e oferece até 60 minutos de uso contínuo.",
         specs: [
