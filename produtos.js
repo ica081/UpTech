@@ -62,7 +62,7 @@ const products = [
             "https://http2.mlstatic.com/D_NQ_NP_2X_976027-MLB106848627854_022026-F-kit-atacado-10-fones-m10-bluetooth--qualidade-premium.webp"
         ],
         includes: "1 par de fones M10, estojo de carregamento e cabo USB para carregamento.",
-        stock: 10
+        stock: 7
     },
 
     // ==========================================
