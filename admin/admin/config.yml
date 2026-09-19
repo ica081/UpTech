@@ -1,0 +1,31 @@
+backend:
+  name: github
+  repo: SEU-USUARIO/NOME-DO-REPO
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "produtos"
+    label: "Produtos"
+    files:
+      - name: "lista"
+        label: "Lista de Produtos"
+        file: "produtos.json"
+        fields:
+          - label: "Produtos"
+            name: "produtos"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "ID (número único)", name: "id", widget: "number" }
+              - { label: "Nome do Produto", name: "name", widget: "string" }
+              - { label: "Preço", name: "price", widget: "string" }
+              - { label: "Emoji (fallback)", name: "emoji", widget: "string", required: false }
+              - { label: "Descrição Curta (aparece no card)", name: "shortDesc", widget: "string" }
+              - { label: "Descrição Completa", name: "fullDesc", widget: "text" }
+              - { label: "Imagens (URLs)", name: "images", widget: "list", required: false, default: [] }
+              - { label: "Especificações", name: "specs", widget: "list", required: false, default: [] }
+              - { label: "Itens Inclusos", name: "includes", widget: "text", required: false }
+              - { label: "Estoque", name: "stock", widget: "number", required: false }
