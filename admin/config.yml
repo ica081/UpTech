@@ -1,5 +1,5 @@
 backend:
-  name: ica081
+  name: github
   repo: ica081/UpTech
   branch: main
 
