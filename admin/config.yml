@@ -1,6 +1,6 @@
 backend:
-  name: github
-  repo: SEU-USUARIO/NOME-DO-REPO
+  name: ica081
+  repo: ica081/UpTech
   branch: main
 
 media_folder: "images/uploads"
