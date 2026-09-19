@@ -53,7 +53,7 @@
         "📏 Alcance de até 10 metros"
       ],
       "includes": "1 par de fones M10, estojo de carregamento e cabo USB para carregamento.",
-      "stock": 7
+      "stock": 6
     },
     {
       "id": 3,
@@ -84,7 +84,7 @@
     {
       "id": 4,
       "name": "Lanterna LED Recarregável Onistek",
-      "price": "R$ 59,90",
+      "price": "R$ 39,90",
       "emoji": "🔦",
       "shortDesc": "Compacta, potente, USB e função power bank.",
       "fullDesc": "Tenha iluminação potente sempre à mão! A Lanterna LED Recarregável Onistek é compacta, leve e prática, ideal para uso em casa, carro, camping, trilhas, pesca, viagens e situações de emergência. Oferece iluminação de alta intensidade com excelente alcance para diferentes situações. A bateria recarregável dispensa pilhas descartáveis: basta recarregar via USB e ter sua lanterna sempre pronta para usar. Também possui função de bateria portátil (power bank), podendo ser utilizada para manter seus dispositivos carregados em situações de emergência. Resistente a respingos de água, é perfeita para o uso cotidiano em ambientes externos. Compacta e leve, com aproximadamente 15 cm de comprimento e 150 g, cabe na mochila, bolsa ou porta-luvas.",
@@ -133,55 +133,6 @@
       "stock": 2
     },
     {
-      "id": 6,
-      "name": "Capinha Magnética Transparente iPhone 13 Pro Max",
-      "price": "R$ 24,90",
-      "emoji": "📱",
-      "shortDesc": "Anti Impacto, MagSafe, TPU e Policarbonato.",
-      "fullDesc": "Proteja seu iPhone 13 Pro Max com elegância e praticidade sem esconder o design original do aparelho. A capinha transparente com tecnologia MagSafe integrada foi desenvolvida para oferecer máxima proteção contra quedas e arranhões, garantindo perfeito alinhamento magnético. Possui bordas reforçadas e elevação nas áreas da câmera e tela para absorver choques e impactos do dia a dia. Preserva a cor e a beleza original do seu aparelho, com botões macios, recortes precisos e excelente aderência.",
-      "images": [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAPWyoFzriQB1imzm2aexsHRGio8_2buZgmNWrG7swwA&s=10"
-      ],
-      "specs": [
-        "🧲 Imã MagSafe Integrado",
-        "🛡️ Proteção Anti Impacto (bordas reforçadas)",
-        "✨ Transparência Cristalina",
-        "📱 Encaixe Perfeito (botões e recortes precisos)",
-        "🖐️ Pegada Confortável e antiderrapante",
-        "🔄 Compatível com MagSafe e Padrão Qi",
-        "🧵 Material: TPU de Alta Qualidade e Policarbonato",
-        "📐 Compatibilidade: iPhone 13 Pro Max",
-        "🎨 Cor: Transparente"
-      ],
-      "includes": "1x Capinha Transparente MagSafe Para iPhone 13 Pro Max.",
-      "stock": 3
-    },
-    {
-      "id": 7,
-      "name": "Fone Bluetooth com Apoio para Orelha DIXSG",
-      "price": "R$ 64,90",
-      "emoji": "🎧",
-      "shortDesc": "Bluetooth 5.3, Cancelamento Ativo de Ruído, design ergonômico.",
-      "fullDesc": "Fone de ouvido sem fio com tecnologia Bluetooth 5.3, que oferece conexão estável e transmissão de áudio de alta fidelidade sem interrupções, perfeito para músicas, chamadas e vídeos com qualidade superior. Com cancelamento ativo de ruído integrado, este fone reduz eficientemente sons ambientais, proporcionando uma experiência auditiva imersiva em qualquer ambiente, mesmo em locais barulhentos. Utiliza tecnologia híbrida para reproduzir áudio com clareza e profundidade, equilibrando graves potentes, médios nítidos e agudos definidos para um som de alta qualidade. Feito com material plástico de alta qualidade, o fone é leve e confortável para uso prolongado, com design ergonômico que se adapta perfeitamente ao ouvido, ideal para uso diário.",
-      "images": [
-        "https://ae-pic-a1.aliexpress-media.com/kf/Sd0e70480fe4b4108b1ecd69e10f40897n.jpg_220x220q75.jpg_.avif",
-        "https://ae-pic-a1.aliexpress-media.com/kf/S7a106606b9bc4535b19c931b291dd39bt.jpg_220x220q75.jpg_.avif"
-      ],
-      "specs": [
-        "📶 Bluetooth 5.3 (conexão estável)",
-        "🎧 Transmissão de áudio de alta fidelidade",
-        "🔇 Cancelamento Ativo de Ruído (ANC)",
-        "🔊 Tecnologia híbrida (graves, médios e agudos equilibrados)",
-        "🪶 Design ergonômico e leve em plástico",
-        "👂 Apoio para orelha (estabilidade durante o uso)",
-        "📱 Ideal para músicas, chamadas e vídeos",
-        "⚡ Conexão sem fio (sem cabos)",
-        "🎯 Uso diário confortável"
-      ],
-      "includes": "1x Fone Bluetooth DIXSG, 1x estojo de carregamento e 1x cabo de carregamento USB.",
-      "stock": 2
-    },
-    {
       "id": 8,
       "name": "Depilador Elétrico Feminino 4 em 1",
       "price": "R$ 59,90",
@@ -211,7 +162,7 @@
     {
       "id": 9,
       "name": "Aparador de Pelos Corporal Masculino Íntimo Prova D'água",
-      "price": "R$ 64,90",
+      "price": "R$ 59,90",
       "emoji": "💇‍♂️",
       "shortDesc": "Prova d'água IPX7, sem fio, lâmina de cerâmica.",
       "fullDesc": "Cuidar do visual e da higiene pessoal ficou muito mais simples, rápido e seguro! O Aparador de Pelos Corporal Masculino foi projetado para oferecer a máxima precisão em cortes corporais, desde a barba e cabelo até as áreas mais sensíveis, garantindo conforto total sem puxões ou irritações na pele. Sua lâmina de cerâmica de alta qualidade aliada ao motor de alta potência de 6.000 RPM entrega um resultado impecável com total segurança. É resistente à água (IPX7), totalmente lavável, facilitando a limpeza e possibilitando o uso durante o banho. Possui bateria recarregável de carga rápida via USB (1 hora) e oferece até 60 minutos de uso contínuo.",
