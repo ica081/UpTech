@@ -71,7 +71,7 @@
             text-shadow: 0 0 30px rgba(0, 229, 255, 0.15);
         }
 
-        /* ========== BADGE DE ESTOQUE (NOVO) ========== */
+        /* ========== BADGE DE ESTOQUE ========== */
         .stock-info {
             display: inline-block;
             margin-top: 10px;
@@ -90,7 +90,7 @@
             border: 1px solid rgba(255, 193, 7, 0.2);
         }
 
-        /* ========== GALERIA ESTILO MERCADO LIVRE ========== */
+        /* ========== GALERIA ========== */
         .gallery-container {
             background: #161b22;
             border: 1px solid #30363d;
@@ -232,35 +232,42 @@
             margin-top: 4px;
         }
 
-        /* ========== BOTÃO WHATSAPP ========== */
+        /* ========== BOTÃO WHATSAPP FLUTUANTE (FIXO EMBAIXO) ========== */
         .btn-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            width: 100%;
-            padding: 18px;
+            width: calc(100% - 40px);
+            max-width: 460px;
+            padding: 16px;
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
-            border: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 60px;
             font-weight: 800;
-            font-size: 18px;
+            font-size: 17px;
             cursor: pointer;
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 30px rgba(37, 211, 102, 0.35);
             transition: all 0.2s;
             text-decoration: none;
-            margin-top: 10px;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .btn-whatsapp:active {
-            transform: scale(0.96);
-            box-shadow: 0 3px 15px rgba(37, 211, 102, 0.15);
+            transform: translateX(-50%) scale(0.96);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 20px rgba(37, 211, 102, 0.25);
         }
 
         .btn-whatsapp i {
             font-style: normal;
-            font-size: 24px;
+            font-size: 22px;
         }
 
         /* ========== LIGHTBOX ========== */
@@ -341,7 +348,7 @@
             margin-top: 12px;
         }
 
-        /* ========== RODAPÉ ========== */
+        /* ========== RODAPÉ (com espaço extra para o botão flutuante) ========== */
         .footer {
             text-align: center;
             margin-top: 25px;
@@ -349,6 +356,7 @@
             font-size: 12px;
             border-top: 1px solid #21262d;
             padding-top: 20px;
+            padding-bottom: 100px; /* 👈 espaço para o botão flutuante não cobrir o conteúdo */
         }
 
         @media (max-width: 420px) {
@@ -356,7 +364,7 @@
             .product-header .price { font-size: 22px; }
             .thumbnail { width: 60px; min-width: 60px; height: 60px; }
             .stock-info { font-size: 12px; padding: 4px 12px; }
-            .btn-whatsapp { font-size: 16px; padding: 16px; }
+            .btn-whatsapp { font-size: 15px; padding: 14px; }
             .lightbox .nav-arrows button { font-size: 28px; padding: 8px 16px; min-width: 50px; }
             .lightbox .close-btn { top: 10px; right: 20px; font-size: 32px; }
         }
@@ -469,7 +477,6 @@
             let stockEmoji = '✅';
             let stockText = `${product.stock} unidades disponíveis`;
 
-            // Se estoque for baixo (menos de 5), muda para amarelo de atenção
             if (product.stock <= 3) {
                 stockClass += ' low-stock';
                 stockEmoji = '⚠️';
@@ -488,7 +495,6 @@
                 </div>
             `;
         } else {
-            // Se não tiver stock definido, não mostra nada
             stockHtml = '';
         }
 
@@ -544,7 +550,7 @@
             <div class="product-header">
                 <h1>${product.name}</h1>
                 <div class="price">${product.price}</div>
-                ${stockHtml}  <!-- 👈 BADGE DE ESTOQUE AQUI -->
+                ${stockHtml}
             </div>
 
             <div class="gallery-container">
