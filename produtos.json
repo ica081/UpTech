@@ -185,6 +185,30 @@
       ],
       "includes": "1x Aparador de Pelos Principal, 1x Pente de Ajuste, 1x Cabo de Carregamento USB e 1x Escova de Limpeza.",
       "stock": 1
+    },
+    {
+      "id": 10,
+      "name": "Capa Magnética Transparente para iPhone 13 Pro Max",
+      "price": "19.90",
+      "emoji": "📱",
+      "shortDesc": "MagSafe, Anti Impacto, Transparente Cristalina.",
+      "fullDesc": "Proteja seu iPhone 13 Pro Max com estilo e sem esconder o design original. Esta capa transparente com MagSafe integrado oferece encaixe magnético perfeito para carregamento sem fio e acessórios compatíveis. Possui bordas reforçadas e elevação nas áreas da câmera e tela para absorver impactos do dia a dia. Material em TPU flexível com traseira rígida em Policarbonato, garantindo durabilidade e pegada confortável.",
+      "images": [
+        "https://ae-pic-a1.aliexpress-media.com/kf/Sde956cbcd002477bb720b72721e4f892o.jpg_220x220q75.jpg_.avif",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S8a1d350181694cd0838e05712e64a951x.jpg_220x220q75.jpg_.avif",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S7d9457ac70944b02876569adcb5d8aa56.jpg_220x220q75.jpg_.avif"
+      ],
+      "specs": [
+        "• 🧲 MagSafe integrado (encaixe magnético perfeito)  •",
+        "• 🛡️ Proteção anti-impacto com bordas reforçadas",
+        "•📱 Compatível com iPhone 13 Pro Max",
+        "• ✨ Transparência cristalina (preserva o design original)",
+        "• 🧵 Material: TPU flexível + Policarbonato rígido",
+        "• 🔄 Compatível com carregamento sem fio MagSafe e Qi",
+        "• 🎨 Cor: Transparente"
+      ],
+      "includes": "1x Capa Magnética Transparente para iPhone 13 Pro Max",
+      "stock": 3
     }
   ]
 }
