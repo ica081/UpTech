@@ -1,33 +1,6 @@
 {
   "produtos": [
     {
-      "id": 1,
-      "name": "Câmera de Segurança Wi-Fi 380 Pro Smart",
-      "price": "R$ 124,90",
-      "emoji": "📹",
-      "shortDesc": "1080p, Visão Noturna 25m, Áudio Bidirecional.",
-      "fullDesc": "Esta câmera de segurança foi pensada para monitorar áreas externas e internas com imagem em alta definição e acesso direto pelo celular. A proposta é facilitar o acompanhamento do ambiente em tempo real, com visualização ao vivo e controle pelo app. Ela trabalha com resolução 1080p, sensor CMOS progressivo e lente de 3,6 mm, recursos que ajudam a entregar uma leitura mais nítida da cena. O campo de visão de 360° e o movimento PTZ ampliam a cobertura e ajudam a reduzir pontos sem visualização. Para uso noturno, conta com visão noturna e alcance de até 25 m, algo útil em locais com pouca iluminação. Também traz alarme, sensor de movimento e alerta no celular para acompanhar mudanças no ambiente com mais praticidade. O áudio bidirecional com microfone permite ouvir e falar à distância, enquanto a redução de ruído ajuda na clareza da comunicação. A conexão via Wi-Fi e a alimentação por corrente elétrica simplificam o uso no dia a dia, sem depender de rede cabeada para transmitir a imagem.",
-      "images": [
-        "https://http2.mlstatic.com/D_NQ_NP_2X_852528-MLB116723919031_082026-F-kit-com-2-cameras-de-seguranca-externas-wifi-380-pro-smart.webp",
-        "https://i.imgur.com/xD6iCQk.png",
-        "https://http2.mlstatic.com/D_NQ_NP_2X_682722-MLB116724716409_082026-F-kit-com-2-cameras-de-seguranca-externas-wifi-380-pro-smart.webp"
-      ],
-      "specs": [
-        "📹 Resolução: 1080p (Full HD)",
-        "🔎 Sensor CMOS progressivo e lente 3.6mm",
-        "🔄 Movimento PTZ e campo de visão 360°",
-        "🌙 Visão noturna com alcance de até 25 metros",
-        "🔔 Alarme e sensor de movimento com alerta no celular",
-        "🎤 Áudio bidirecional com redução de ruído",
-        "📶 Conexão Wi-Fi (sem fio)",
-        "💾 Suporte para cartão SD de até 128GB",
-        "⚡ Alimentação por corrente elétrica",
-        "📦 Acompanha carregador, manual e parafusos"
-      ],
-      "includes": "1 Câmera de Segurança 380 Pro Smart, carregador, manual e parafusos para instalação.",
-      "stock": 1
-    },
-    {
       "id": 2,
       "name": "Fone M10 Bluetooth Wireless",
       "price": "R$ 44,90",
@@ -55,6 +28,54 @@
       "stock": 6
     },
     {
+      "id": 9,
+      "name": "Fone Bluetooth DIXSG com Apoio para Orelha",
+      "price": "49.90",
+      "emoji": "🎧",
+      "shortDesc": "Bluetooth 5.3, Cancelamento de Ruído, cor preta.",
+      "fullDesc": "Fone de ouvido sem fio com Bluetooth 5.3, garantindo conexão estável e áudio de alta fidelidade sem interrupções. Possui cancelamento ativo de ruído (ANC) que reduz sons ambientais, proporcionando imersão total mesmo em locais barulhentos. A tecnologia híbrida equilibra graves potentes, médios nítidos e agudos definidos para um som de alta qualidade. Design ergonômico e leve, com apoio para orelha que garante estabilidade durante o uso. Disponível apenas na cor preta.",
+      "images": [
+        "https://i.imgur.com/2F5Vjjo.png",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S7a106606b9bc4535b19c931b291dd39bt.jpg_220x220q75.jpg_.avif",
+        "https://ae-pic-a1.aliexpress-media.com/kf/Sd0e70480fe4b4108b1ecd69e10f40897n.jpg_220x220q75.jpg_.avif"
+      ],
+      "specs": [
+        "• 📶 Bluetooth 5.3 (conexão estável e rápida)",
+        "• 🔇 Cancelamento Ativo de Ruído (ANC)",
+        "• 🔊 Tecnologia híbrida (graves, médios e agudos equilibrados)",
+        "• 🪶 Design ergonômico e leve",
+        "• 👂 Apoio para orelha (estabilidade durante o uso)",
+        "• 📱 Compatível com Xiaomi, Android e iOS",
+        "• 🎨 Cor: Preto"
+      ],
+      "includes": "1x Fone Bluetooth DIXSG (preto), 1x estojo de carregamento e 1x cabo de carregamento USB",
+      "stock": 2
+    },
+    {
+      "id": 8,
+      "name": "Capa Magnética Transparente para iPhone 13 Pro Max",
+      "price": "19.90",
+      "emoji": "📱",
+      "shortDesc": "MagSafe, Anti Impacto, Transparente Cristalina.",
+      "fullDesc": "Proteja seu iPhone 13 Pro Max com estilo e sem esconder o design original. Esta capa transparente com MagSafe integrado oferece encaixe magnético perfeito para carregamento sem fio e acessórios compatíveis. Possui bordas reforçadas e elevação nas áreas da câmera e tela para absorver impactos do dia a dia. Material em TPU flexível com traseira rígida em Policarbonato, garantindo durabilidade e pegada confortável.",
+      "images": [
+        "https://ae-pic-a1.aliexpress-media.com/kf/Sde956cbcd002477bb720b72721e4f892o.jpg_220x220q75.jpg_.avif",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S8a1d350181694cd0838e05712e64a951x.jpg_220x220q75.jpg_.avif",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S7d9457ac70944b02876569adcb5d8aa56.jpg_220x220q75.jpg_.avif"
+      ],
+      "specs": [
+        "• 🧲 MagSafe integrado (encaixe magnético perfeito)  •",
+        "• 🛡️ Proteção anti-impacto com bordas reforçadas",
+        "•📱 Compatível com iPhone 13 Pro Max",
+        "• ✨ Transparência cristalina (preserva o design original)",
+        "• 🧵 Material: TPU flexível + Policarbonato rígido",
+        "• 🔄 Compatível com carregamento sem fio MagSafe e Qi",
+        "• 🎨 Cor: Transparente"
+      ],
+      "includes": "1x Capa Magnética Transparente para iPhone 13 Pro Max",
+      "stock": 3
+    },
+    {
       "id": 3,
       "name": "Carregador de Bateria Veicular 12V Bivolt Automático",
       "price": "R$ 59,90",
@@ -80,6 +101,33 @@
       ],
       "includes": "1x Carregador de Bateria Veicular 12V, 1x Cabo de Alimentação (1m) e 1x Par de Garras de Conexão (Jacaré).",
       "stock": 4
+    },
+    {
+      "id": 1,
+      "name": "Câmera de Segurança Wi-Fi 380 Pro Smart",
+      "price": "R$ 124,90",
+      "emoji": "📹",
+      "shortDesc": "1080p, Visão Noturna 25m, Áudio Bidirecional.",
+      "fullDesc": "Esta câmera de segurança foi pensada para monitorar áreas externas e internas com imagem em alta definição e acesso direto pelo celular. A proposta é facilitar o acompanhamento do ambiente em tempo real, com visualização ao vivo e controle pelo app. Ela trabalha com resolução 1080p, sensor CMOS progressivo e lente de 3,6 mm, recursos que ajudam a entregar uma leitura mais nítida da cena. O campo de visão de 360° e o movimento PTZ ampliam a cobertura e ajudam a reduzir pontos sem visualização. Para uso noturno, conta com visão noturna e alcance de até 25 m, algo útil em locais com pouca iluminação. Também traz alarme, sensor de movimento e alerta no celular para acompanhar mudanças no ambiente com mais praticidade. O áudio bidirecional com microfone permite ouvir e falar à distância, enquanto a redução de ruído ajuda na clareza da comunicação. A conexão via Wi-Fi e a alimentação por corrente elétrica simplificam o uso no dia a dia, sem depender de rede cabeada para transmitir a imagem.",
+      "images": [
+        "https://http2.mlstatic.com/D_NQ_NP_2X_852528-MLB116723919031_082026-F-kit-com-2-cameras-de-seguranca-externas-wifi-380-pro-smart.webp",
+        "https://i.imgur.com/xD6iCQk.png",
+        "https://http2.mlstatic.com/D_NQ_NP_2X_682722-MLB116724716409_082026-F-kit-com-2-cameras-de-seguranca-externas-wifi-380-pro-smart.webp"
+      ],
+      "specs": [
+        "📹 Resolução: 1080p (Full HD)",
+        "🔎 Sensor CMOS progressivo e lente 3.6mm",
+        "🔄 Movimento PTZ e campo de visão 360°",
+        "🌙 Visão noturna com alcance de até 25 metros",
+        "🔔 Alarme e sensor de movimento com alerta no celular",
+        "🎤 Áudio bidirecional com redução de ruído",
+        "📶 Conexão Wi-Fi (sem fio)",
+        "💾 Suporte para cartão SD de até 128GB",
+        "⚡ Alimentação por corrente elétrica",
+        "📦 Acompanha carregador, manual e parafusos"
+      ],
+      "includes": "1 Câmera de Segurança 380 Pro Smart, carregador, manual e parafusos para instalação.",
+      "stock": 1
     },
     {
       "id": 4,
@@ -185,54 +233,6 @@
       ],
       "includes": "1x Aparador de Pelos Principal, 1x Pente de Ajuste, 1x Cabo de Carregamento USB e 1x Escova de Limpeza.",
       "stock": 1
-    },
-    {
-      "id": 8,
-      "name": "Capa Magnética Transparente para iPhone 13 Pro Max",
-      "price": "19.90",
-      "emoji": "📱",
-      "shortDesc": "MagSafe, Anti Impacto, Transparente Cristalina.",
-      "fullDesc": "Proteja seu iPhone 13 Pro Max com estilo e sem esconder o design original. Esta capa transparente com MagSafe integrado oferece encaixe magnético perfeito para carregamento sem fio e acessórios compatíveis. Possui bordas reforçadas e elevação nas áreas da câmera e tela para absorver impactos do dia a dia. Material em TPU flexível com traseira rígida em Policarbonato, garantindo durabilidade e pegada confortável.",
-      "images": [
-        "https://ae-pic-a1.aliexpress-media.com/kf/Sde956cbcd002477bb720b72721e4f892o.jpg_220x220q75.jpg_.avif",
-        "https://ae-pic-a1.aliexpress-media.com/kf/S8a1d350181694cd0838e05712e64a951x.jpg_220x220q75.jpg_.avif",
-        "https://ae-pic-a1.aliexpress-media.com/kf/S7d9457ac70944b02876569adcb5d8aa56.jpg_220x220q75.jpg_.avif"
-      ],
-      "specs": [
-        "• 🧲 MagSafe integrado (encaixe magnético perfeito)  •",
-        "• 🛡️ Proteção anti-impacto com bordas reforçadas",
-        "•📱 Compatível com iPhone 13 Pro Max",
-        "• ✨ Transparência cristalina (preserva o design original)",
-        "• 🧵 Material: TPU flexível + Policarbonato rígido",
-        "• 🔄 Compatível com carregamento sem fio MagSafe e Qi",
-        "• 🎨 Cor: Transparente"
-      ],
-      "includes": "1x Capa Magnética Transparente para iPhone 13 Pro Max",
-      "stock": 3
-    },
-    {
-      "id": 9,
-      "name": "Fone Bluetooth DIXSG com Apoio para Orelha",
-      "price": "49.90",
-      "emoji": "🎧",
-      "shortDesc": "Bluetooth 5.3, Cancelamento de Ruído, cor preta.",
-      "fullDesc": "Fone de ouvido sem fio com Bluetooth 5.3, garantindo conexão estável e áudio de alta fidelidade sem interrupções. Possui cancelamento ativo de ruído (ANC) que reduz sons ambientais, proporcionando imersão total mesmo em locais barulhentos. A tecnologia híbrida equilibra graves potentes, médios nítidos e agudos definidos para um som de alta qualidade. Design ergonômico e leve, com apoio para orelha que garante estabilidade durante o uso. Disponível apenas na cor preta.",
-      "images": [
-        "https://i.imgur.com/2F5Vjjo.png",
-        "https://ae-pic-a1.aliexpress-media.com/kf/S7a106606b9bc4535b19c931b291dd39bt.jpg_220x220q75.jpg_.avif",
-        "https://ae-pic-a1.aliexpress-media.com/kf/Sd0e70480fe4b4108b1ecd69e10f40897n.jpg_220x220q75.jpg_.avif"
-      ],
-      "specs": [
-        "• 📶 Bluetooth 5.3 (conexão estável e rápida)",
-        "• 🔇 Cancelamento Ativo de Ruído (ANC)",
-        "• 🔊 Tecnologia híbrida (graves, médios e agudos equilibrados)",
-        "• 🪶 Design ergonômico e leve",
-        "• 👂 Apoio para orelha (estabilidade durante o uso)",
-        "• 📱 Compatível com Xiaomi, Android e iOS",
-        "• 🎨 Cor: Preto"
-      ],
-      "includes": "1x Fone Bluetooth DIXSG (preto), 1x estojo de carregamento e 1x cabo de carregamento USB",
-      "stock": 2
     }
   ]
 }
